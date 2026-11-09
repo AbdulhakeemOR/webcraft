@@ -1,0 +1,329 @@
+﻿/* Shared visual system. Example styles remain scoped to their own components. */
+:root {
+  --background: #0b0d14;
+  --panel: #141824;
+  --raised: #1c2232;
+  --text: #f3f4fc;
+  --muted: #b0b8ce;
+  --border: #30384e;
+  --accent: #c5b3ff;
+  --button: #7350c4;
+  --button-hover: #8964df;
+  --surface-glass: rgb(20 24 36 / 85%);
+  --surface-shadow: 0 16px 44px -24px rgb(0 0 0 / 65%);
+  --radius: 18px;
+  font-family: 'Segoe UI Variable', 'Segoe UI', Arial, sans-serif;
+}
+
+:root[data-theme="light"] {
+  --background: #f5f6fb;
+  --panel: #ffffff;
+  --raised: #eaeef8;
+  --text: #1a2032;
+  --muted: #536079;
+  --border: #d5dceb;
+  --accent: #6540a9;
+  --button: #6845b4;
+  --button-hover: #7956c6;
+  --surface-glass: rgb(255 255 255 / 88%);
+  --surface-shadow: 0 16px 44px -28px rgb(42 47 85 / 30%);
+}
+
+body {
+  background:
+    radial-gradient(ellipse 65vw 460px at 85% 0, color-mix(in srgb, var(--accent) 9%, transparent), transparent 80%),
+    var(--background);
+}
+
+::selection { background: var(--accent); color: var(--background); }
+
+.site-header,
+body:has(.home-v2) .site-header {
+  position: relative;
+  z-index: 20;
+  min-height: 88px;
+  background: var(--surface-glass);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.brand { font-weight: 750; letter-spacing: -.7px; }
+.navigation a { min-height: 44px; align-content: center; }
+.navigation a[aria-current="page"] { color: var(--accent); }
+.theme-picker select, .command-trigger { border-radius: 12px; }
+
+.page-title {
+  max-width: 1000px;
+  font-size: clamp(38px, 5.3vw, 72px);
+  font-weight: 750;
+  letter-spacing: -.055em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.section { padding-block: clamp(40px, 6vw, 80px); }
+.section > .intro { max-width: 730px; font-size: 18px; line-height: 1.85; }
+.eyebrow { font-size: 11px; letter-spacing: 1.2px; line-height: 1.8; }
+.section-heading h2, .about-section > h2, .detail-related h2 {
+  font-weight: 650;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.button { min-height: 48px; border-radius: 11px; padding: 12px 20px; }
+.button-primary, .home-v2 .button-primary {
+  color: #fff;
+  background: linear-gradient(160deg, var(--button-hover), var(--button));
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  box-shadow: 0 6px 18px -8px var(--button), inset 0 1px rgb(255 255 255 / 15%);
+}
+:root:not([data-theme="light"]) .home-v2 .button-primary { color: #fff; }
+.button-primary:hover { background: var(--button-hover); }
+
+.component-card, .guide-directory-card, .section-directory-card,
+.saved-page-card, .template-directory-card, .compare-page-column,
+.about-capabilities article, .detail-related-card {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--panel);
+  box-shadow: var(--surface-shadow);
+}
+
+.component-information { padding: 24px; }
+.component-information h2, .guide-directory-card h2,
+.section-directory-card h2, .saved-page-card h2 {
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: -.6px;
+}
+.component-information p, .guide-directory-card > p,
+.section-directory-card p, .saved-page-card > p { font-size: 14px; line-height: 1.85; }
+
+.component-canvas, .template-directory-preview,
+.home-v2 .home-feature-preview {
+  background-color: var(--raised);
+  background-image: radial-gradient(color-mix(in srgb, var(--muted) 22%, transparent) .7px, transparent .7px);
+  background-size: 20px 20px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.collection-sidebar { border-radius: 16px; background: var(--surface-glass); }
+.collection-sidebar-categories button { font-size: 13px; border-radius: 9px; }
+.collection-category-count { font-size: 11px; }
+.collection-tools .search-field { border-radius: 12px; background: var(--panel); }
+.filter-chip { min-height: 40px; border-radius: 24px; }
+.results-count { font-size: 12px; color: var(--muted); }
+
+.home-v2 .hero { padding-block: clamp(44px, 7vw, 100px); }
+.home-v2 .hero h1 { font-size: clamp(44px, 5.4vw, 76px); letter-spacing: -.06em; }
+.home-v2 .hero h1 .accent { color: var(--accent); }
+.home-v2 .hero .status-dot { background: var(--accent); box-shadow: 0 0 14px var(--accent); }
+.hs-window {
+  transform: perspective(1200px) rotateY(-3deg) rotateX(1deg);
+  border-radius: 20px;
+  box-shadow: 0 35px 70px -35px rgb(0 0 0 / 55%), 10px 10px 0 color-mix(in srgb, var(--accent) 9%, transparent);
+}
+.hs-window-bar, .hs-window-footer { background: var(--surface-glass); }
+.hs-stage { background: radial-gradient(ellipse at 60% 30%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 80%), var(--raised); }
+.hs-demo-button { background: var(--button); border-color: var(--button-hover); box-shadow: 0 5px 0 #422878; }
+.hs-demo-button:hover { box-shadow: 0 7px 0 #422878; }
+.home-v2 .home-collection-summary { padding-block: 32px; }
+.home-v2 .home-feature-preview { border-radius: 16px; }
+.home-v2 .home-learning-panel, .saved-backup {
+  border-radius: 18px;
+  background: linear-gradient(120deg, color-mix(in srgb, var(--accent) 9%, var(--panel)), var(--panel));
+}
+
+.preview-workspace, .detail-source-panel { border-radius: 0 0 16px 16px; box-shadow: var(--surface-shadow); }
+.workspace-controls, .detail-source-tools { gap: 16px; padding: 20px; }
+.workspace-stage { padding-block: 44px; }
+.detail-facts { gap: 12px; }
+.documentation-grid article { border-radius: 16px; }
+.guide-article-body p { font-size: 17px; line-height: 1.95; }
+.guide-checklist { border-radius: 16px; }
+.command-dialog { background: var(--surface-glass); backdrop-filter: blur(24px); border-radius: 20px; box-shadow: 0 40px 100px rgb(0 0 0 / 40%); }
+.command-dialog::backdrop { background: rgb(5 8 18 / 65%); backdrop-filter: blur(5px); }
+.atlas-footer, body:has(.home-v2) .atlas-footer { background: var(--panel); }
+.atlas-footer-navigation a { font-size: 13px; }
+.atlas-footer-content { padding-block: 56px 40px; }
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .component-card, .guide-directory-card, .section-directory-card,
+  .saved-page-card, .detail-related-card, .home-feature-preview {
+    transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+  }
+  .component-card:hover, .guide-directory-card:hover, .section-directory-card:hover,
+  .saved-page-card:hover, .detail-related-card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+  }
+  .button-primary { transition: transform 180ms ease, box-shadow 180ms ease; }
+  .button-primary:hover { transform: translateY(-2px); }
+}
+
+/* Native scroll reveals are progressive enhancement; content is visible by default. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .home-learning-panel, .about-section, .recent-examples-heading {
+      animation: atlas-enter linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 22%;
+    }
+  }
+}
+@keyframes atlas-enter {
+  from { opacity: .55; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 760px) {
+  .container { padding-inline: 22px; }
+  .hs-window { transform: none; }
+  .section > .intro { font-size: 16px; }
+  .site-header, body:has(.home-v2) .site-header { min-height: 76px; }
+  .workspace-controls { padding: 16px; }
+  .workspace-stage { padding: 24px 12px; }
+  .guide-article-body p { font-size: 16px; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root, :root[data-theme="light"] { --surface-glass: var(--panel); }
+  .site-header, .command-dialog { backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hs-window { transform: none; }
+  .button-primary:hover { transform: none; }
+}
+@media (forced-colors: active) {
+  .button-primary, .home-v2 .button-primary { color: ButtonText; border: 1px solid ButtonText; }
+}
+/* Page-specific composition: shared colours, distinct reading rhythms. */
+.home-v2 .hero {
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+}
+.home-v2 .hero-copy { max-width: 620px; }
+.home-v2 .hero-actions { gap: 20px; }
+.home-v2 .hero-note { margin-top: 34px; }
+.home-v2 .home-collection-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr;
+  border-block: 1px solid var(--border);
+}
+.home-v2 .home-collection-summary > div { padding-inline: 26px; }
+.home-v2 .home-collection-summary > div:first-child { padding-left: 0; }
+.home-v2 .home-collection-summary > div + div { border-left: 1px solid var(--border); }
+.home-v2 .home-collection { padding-top: 72px; }
+.home-v2 .home-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 28px; }
+.home-v2 .home-feature-information h3 a { min-height: 44px; align-content: center; }
+.home-v2 .home-feature-preview { height: 390px; }
+.home-v2 .home-learning { padding-block: 48px; }
+.home-v2 .home-learning-panel { border-left: 3px solid var(--accent); }
+
+/* Gallery: a quiet utility rail and generous interactive canvases. */
+.gallery-route > .page-title { max-width: 820px; }
+.gallery-route .collection-layout { margin-top: 44px; gap: 32px; }
+.gallery-route .collection-sidebar-panel { padding-block: 24px; }
+.gallery-route .collection-tools { padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.gallery-route .collection-secondary-tools { padding-block: 20px; }
+.gallery-route .component-grid { gap: 28px; }
+.gallery-route .component-canvas { min-height: 340px; padding: 24px; }
+.gallery-route .component-meta-row .eyebrow { font-size: 10px; }
+.gallery-route .save-component { min-width: 44px; min-height: 44px; }
+.gallery-route .gallery-pagination { padding-block: 24px; }
+
+/* Detail: keep actions readable and the workspace visually dominant. */
+.component-route > .page-title { margin-bottom: 18px; }
+.component-route .detail-page-actions { gap: 12px 22px; margin-top: 28px; }
+.component-route .detail-save-button { min-height: 46px; border-radius: 10px; }
+.component-route .detail-save-button[aria-pressed="true"] { border-color: var(--accent); background: var(--raised); color: var(--accent); }
+.component-route .detail-facts { margin-block: 20px 32px; }
+.component-route .detail-view-bar { padding-block: 16px; border-radius: 16px 16px 0 0; }
+.component-route .documentation-grid { gap: 28px; margin-top: 40px; }
+.component-route .documentation-grid article { padding: 30px; }
+.component-route .documentation-grid h2 { font-size: 28px; }
+.component-route .detail-setup-steps { padding-left: 22px; line-height: 1.9; }
+.component-route .component-pagination { margin-block: 44px; gap: 20px; }
+.component-route .component-pagination a { padding: 24px; border-radius: 14px; background: var(--panel); }
+.component-route .detail-related-grid { gap: 20px; }
+
+/* Directories: readable chapter cards with a consistent action baseline. */
+.sections-route .section-directory,
+.guides-route .guide-directory { margin-top: 40px; gap: 24px; }
+.sections-route .section-directory-card,
+.guides-route .guide-directory-card { display: flex; flex-direction: column; align-items: flex-start; padding: 30px; }
+.sections-route .section-directory-card .button,
+.guides-route .guide-read-link { margin-top: auto; }
+.sections-route .section-directory-card p,
+.guides-route .guide-directory-card > p { margin-bottom: 28px; }
+.guides-route .guide-card-meta { width: 100%; gap: 16px; }
+.guides-route .guide-directory-card h2 { font-size: 27px; line-height: 1.25; }
+.guides-route .guide-directory-card:first-child { background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, var(--panel)), var(--panel)); border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
+
+/* Templates: a large framed page rather than another small component tile. */
+.templates-route .template-directory { margin-top: 40px; gap: 40px; }
+.templates-route .template-directory-preview { height: 600px; padding: 32px; border-bottom: 1px solid var(--border); }
+.templates-route .template-directory-information { padding: 32px; border-top: 0; }
+.templates-route .template-directory-information h2 { font-size: 32px; letter-spacing: -1px; }
+
+/* Saved: compact personal reading list, with backup as a secondary task. */
+.saved-route .saved-page-tools { margin-top: 36px; padding-block: 20px; border-block: 1px solid var(--border); }
+.saved-route .saved-page-grid { gap: 24px; }
+.saved-route .saved-page-card { padding: 28px; }
+.saved-route .saved-card-actions { padding-top: 22px; border-top: 1px solid var(--border); }
+.saved-route .saved-backup { margin-top: 48px; padding: 32px; }
+.saved-route .saved-page-empty { margin-top: 36px; padding: 56px 24px; background: var(--panel); border-radius: 18px; }
+
+/* Compare: equally weighted workspaces and clear selection controls. */
+.compare-route .compare-page-toolbar { margin-top: 30px; }
+.compare-route .compare-page-grid { gap: 28px; }
+.compare-route .compare-page-selection { padding: 24px; background: var(--raised); }
+.compare-route .compare-page-selection label { font-weight: 650; color: var(--text); }
+.compare-route .compare-page-description { min-height: 230px; padding: 28px; }
+.compare-route .compare-page-description h2 { font-weight: 650; }
+.compare-route .workspace-controls { padding: 20px; }
+
+/* Long-form pages use a narrower measure and deliberate chapter spacing. */
+.guide-article { max-width: 1050px; }
+.guide-article-header { margin-top: 36px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+.guide-article-body { max-width: 760px; margin-inline: auto; }
+.guide-article-section { margin-top: 48px; }
+.guide-article-section h2 { font-size: clamp(25px, 3vw, 34px); font-weight: 650; letter-spacing: -.8px; }
+.guide-article .guide-related { margin-top: 56px; padding-top: 32px; }
+.guide-article .guide-next { margin-top: 40px; padding: 28px; border-radius: 16px; background: var(--panel); }
+.about-page .about-statistics { padding-block: 32px; }
+.about-page .about-statistics dd { font-size: 48px; font-weight: 700; color: var(--accent); }
+.about-page .about-section { margin-top: 56px; }
+.about-page .about-authorship { border-left: 3px solid var(--accent); padding: 8px 0 8px 28px; }
+.about-page .about-capabilities article { padding: 30px; }
+
+@media (max-width: 1050px) {
+  .home-v2 .hero { gap: 32px; }
+  .gallery-route .collection-layout { gap: 20px; }
+}
+@media (max-width: 900px) {
+  .home-v2 .hero { grid-template-columns: 1fr; }
+  .home-v2 .hero-copy { max-width: 700px; }
+  .home-v2 .hs-window { width: 100%; max-width: 620px; margin-inline: auto; transform: none; }
+  .gallery-route .collection-layout { gap: 28px; }
+  .compare-route .compare-page-description { min-height: 0; }
+}
+@media (max-width: 760px) {
+  .home-v2 .home-feature-grid { grid-template-columns: 1fr; }
+  .home-v2 .home-collection-summary { grid-template-columns: 1fr; gap: 20px; }
+  .home-v2 .home-collection-summary > div { padding: 0; }
+  .home-v2 .home-collection-summary > div + div { border-left: 0; padding-top: 20px; border-top: 1px solid var(--border); }
+  .home-v2 .home-collection { padding-top: 44px; }
+  .templates-route .template-directory-preview { height: 460px; padding: 12px; }
+  .templates-route .template-directory-information { padding: 24px; }
+  .component-route .documentation-grid article,
+  .saved-route .saved-page-card,
+  .saved-route .saved-backup,
+  .sections-route .section-directory-card,
+  .guides-route .guide-directory-card { padding: 24px; }
+  .component-route .component-pagination a { padding: 18px; }
+  .gallery-route .component-canvas { padding: 18px; }
+  .about-page .about-statistics dd { font-size: 34px; }
+  .guide-article-section { margin-top: 36px; }
+}

@@ -1,0 +1,638 @@
+/* =======================================================
+   SHARED VISUAL STYLES FOR ALL EXAMPLES
+   Also included in component source downloads.
+======================================================= */
+
+:is(
+  .pgb-example,
+  .dc-example,
+  .ca-example,
+  .workshop-navigation-demo,
+  .project-dialog-example,
+  .idea-bento,
+  .contact-form-example,
+  .toast-workshop,
+  .plan-selector,
+  .quote-carousel,
+  .direction-hero,
+  .studio-footer-example,
+  .studio-landing,
+  .perspective-example,
+  .project-tabs,
+  .project-table-example,
+  .loading-states-example,
+  .dashboard-sidebar-example
+) {
+  --ex-bg: var(--panel, #141b26);
+  --ex-raised: var(--raised, #1d2735);
+  --ex-text: var(--text, #eff5ff);
+  --ex-muted: var(--muted, #a8b7cd);
+  --ex-line: var(--border, #344256);
+
+  --ex-accent: #b9f56d;
+  --ex-ink: #122005;
+
+  color-scheme: var(--demo-scheme, dark);
+
+  color: var(--ex-text) !important;
+  background: var(--ex-bg) !important;
+
+  border: 1px solid var(--ex-line) !important;
+  border-radius: 18px !important;
+
+  box-shadow:
+    0 16px 36px #00000014,
+    inset 0 1px 0 #ffffff0b;
+
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* Different accents give examples their own character. */
+
+.dc-example,
+.project-tabs {
+  --ex-accent: #ceb6ff;
+  --ex-ink: #271a3b;
+}
+
+.workshop-navigation-demo,
+.project-table-example {
+  --ex-accent: #93e3fc;
+  --ex-ink: #10323c;
+}
+
+.project-dialog-example,
+.studio-footer-example,
+.plan-selector {
+  --ex-accent: #ffd396;
+  --ex-ink: #382609;
+}
+
+.toast-workshop,
+.contact-form-example {
+  --ex-accent: #91ebd0;
+  --ex-ink: #14382d;
+}
+
+.quote-carousel {
+  --ex-accent: #f6b8d7;
+  --ex-ink: #422034;
+}
+
+/* Replace fixed text colours from the original demonstrations. */
+
+:is(
+  .pgb-example,
+  .dc-example,
+  .ca-example,
+  .workshop-navigation-demo,
+  .project-dialog-example,
+  .idea-bento,
+  .contact-form-example,
+  .toast-workshop,
+  .plan-selector,
+  .quote-carousel,
+  .direction-hero,
+  .studio-footer-example,
+  .studio-landing,
+  .perspective-example,
+  .project-tabs,
+  .project-table-example,
+  .loading-states-example,
+  .dashboard-sidebar-example
+) :is(h2, h3, h4, strong, summary, label) {
+  color: var(--ex-text) !important;
+}
+
+:is(
+  .pgb-example,
+  .dc-example,
+  .ca-example,
+  .workshop-navigation-demo,
+  .project-dialog-example,
+  .idea-bento,
+  .contact-form-example,
+  .toast-workshop,
+  .plan-selector,
+  .quote-carousel,
+  .direction-hero,
+  .studio-footer-example,
+  .studio-landing,
+  .perspective-example,
+  .project-tabs,
+  .project-table-example,
+  .loading-states-example,
+  .dashboard-sidebar-example
+) :is(p, small, legend) {
+  color: var(--ex-muted) !important;
+}
+
+:is(
+  .dc-label,
+  .wn-caption,
+  .pd-eyebrow,
+  .ib-eyebrow,
+  .ib-card-label,
+  .cf-eyebrow,
+  .ps-eyebrow,
+  .qc-eyebrow,
+  .dh-eyebrow,
+  .sf-eyebrow,
+  .sl-eyebrow,
+  .pc-eyebrow,
+  .pt-eyebrow,
+  .pte-eyebrow,
+  .lse-eyebrow,
+  .ds-eyebrow,
+  .tw-eyebrow
+) {
+  color: var(--ex-muted) !important;
+  letter-spacing: 0.07em;
+}
+
+/* Layered panels */
+
+:is(
+  .pd-launch-card,
+  .pd-dialog,
+  .ib-card,
+  .ps-card,
+  .qc-slide,
+  .dh-art-panel-front,
+  .sf-copy-fallback input,
+  .sl-art-card,
+  .pt-panel,
+  .pte-scroll,
+  .lse-preview,
+  .ds-sidebar,
+  .ds-content-illustration,
+  .tw-draft,
+  .tw-toast
+) {
+  background: var(--ex-raised) !important;
+  color: var(--ex-text) !important;
+  border-color: var(--ex-line) !important;
+  border-radius: 14px;
+}
+
+:is(
+  .wn-bar,
+  .wn-mobile-links button,
+  .ib-foundation,
+  .ps-features,
+  .ps-selection-area,
+  .dh-topline,
+  .dh-bottomline,
+  .sf-invitation,
+  .sf-bottom,
+  .sf-demo-note,
+  .sl-header,
+  .sl-section,
+  .sl-footer,
+  .sl-service,
+  .sl-faq details,
+  .pc-bottomline,
+  .pt-tab-list,
+  .pte-table tbody th,
+  .pte-table tbody td,
+  .ds-profile
+) {
+  border-color: var(--ex-line) !important;
+}
+
+/* Form fields */
+
+:is(
+  .cf-field,
+  .pd-field,
+  .sl-form,
+  .pte-search,
+  .sf-copy-fallback
+) :is(input, select, textarea) {
+  background: var(--ex-bg) !important;
+  color: var(--ex-text) !important;
+  border-color: var(--ex-line) !important;
+  border-radius: 9px;
+}
+
+:is(
+  .cf-field,
+  .pd-field,
+  .sl-form,
+  .pte-search
+) :is(input, textarea)::placeholder {
+  color: var(--ex-muted);
+}
+
+/* Primary actions */
+
+:is(
+  .pgb-button,
+  .pd-primary,
+  .cf-submit,
+  .ps-select,
+  .dh-primary,
+  .sf-contact-button,
+  .sl-primary,
+  .lse-primary
+) {
+  background: var(--ex-accent) !important;
+  color: var(--ex-ink) !important;
+  border-color: transparent !important;
+
+  border-radius: 9px;
+  box-shadow: 0 4px 12px #00000010;
+}
+
+:is(
+  .pgb-button,
+  .pd-primary,
+  .cf-submit,
+  .ps-select,
+  .dh-primary,
+  .sf-contact-button,
+  .sl-primary,
+  .lse-primary
+):hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+:is(
+  .pd-secondary,
+  .pd-close,
+  .cf-reset,
+  .ib-reset,
+  .ps-clear,
+  .qc-arrow,
+  .wn-menu-toggle,
+  .ds-collapse,
+  .lse-secondary,
+  .tw-controls button
+) {
+  background: var(--ex-bg) !important;
+  color: var(--ex-text) !important;
+  border-color: var(--ex-line) !important;
+}
+
+/* Navigation and selection */
+
+:is(
+  .wn-desktop-links button,
+  .wn-mobile-links button,
+  .sf-link-group button,
+  .sl-navigation button,
+  .ds-nav-button,
+  .pt-tab-list button,
+  .pte-table thead button,
+  .ps-billing-options label > span,
+  .dh-direction-options label > span
+) {
+  color: var(--ex-muted) !important;
+  background: transparent !important;
+}
+
+:is(
+  .wn-desktop-links button,
+  .wn-mobile-links button,
+  .ds-nav-button,
+  .pt-tab-list button
+)[aria-pressed="true"],
+.pt-tab-list button[aria-selected="true"],
+.ps-billing-options input:checked + span,
+.dh-direction-options input:checked + span {
+  color: var(--ex-ink) !important;
+  background: var(--ex-accent) !important;
+  border-color: transparent !important;
+}
+
+.ds-nav-button[aria-pressed="true"] .ds-expanded-label {
+  color: inherit;
+}
+
+:is(.wn-brand, .sl-brand, .sf-brand, .ds-brand) {
+  color: var(--ex-text) !important;
+}
+
+:is(
+  .wn-brand-mark,
+  .sl-brand > span,
+  .sf-brand-mark,
+  .ds-brand-symbol,
+  .ds-avatar,
+  .qc-avatar,
+  .pd-symbol
+) {
+  background: var(--ex-accent) !important;
+  color: var(--ex-ink) !important;
+  border-color: transparent !important;
+}
+
+:is(
+  .wn-demo-note,
+  .wn-caption,
+  .ib-progress-label,
+  .ib-demo-note,
+  .cf-required,
+  .cf-counter,
+  .ps-price > span,
+  .ps-badge,
+  .qc-counter,
+  .qc-person > span,
+  .dh-edition,
+  .dh-art-label,
+  .dh-art-coordinate,
+  .sf-location,
+  .sf-bottom,
+  .sf-bottom-note,
+  .sf-demo-note,
+  .sl-art-caption,
+  .sl-footer,
+  .pc-topline,
+  .pc-bottomline,
+  .pc-note,
+  .pt-panel-number,
+  .pte-project-id,
+  .pte-progress-cell > span,
+  .lse-bottom > span,
+  .ds-demo-note,
+  .ds-profile div > span,
+  .tw-draft-state
+) {
+  color: var(--ex-muted) !important;
+}
+
+/* Original artwork and depth effects */
+
+.dc-example {
+  background:
+    radial-gradient(
+      260px at var(--dc-x, 50%) var(--dc-y, 20%),
+      color-mix(
+        in srgb,
+        var(--ex-accent) 24%,
+        var(--ex-bg)
+      ),
+      var(--ex-bg)
+    ) !important;
+}
+
+.dc-symbol,
+.pc-centre {
+  color: var(--ex-accent) !important;
+}
+
+.ib-introduction {
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(
+        in srgb,
+        var(--ex-accent) 17%,
+        var(--ex-bg)
+      ),
+      var(--ex-bg)
+    ) !important;
+}
+
+.ib-pill,
+.ps-badge {
+  border-color: var(--ex-line) !important;
+  background: var(--ex-bg) !important;
+  color: var(--ex-text) !important;
+}
+
+.ib-orbit span,
+.dh-art-orbit > span,
+.pc-orbit {
+  border-color: var(--ex-accent) !important;
+}
+
+.ib-rhythm span,
+.sl-art-shapes i {
+  background: var(--ex-accent) !important;
+  border-color: var(--ex-accent) !important;
+}
+
+.dh-art-panel-back {
+  background: var(--ex-raised) !important;
+  border-color: var(--ex-line) !important;
+}
+
+.dh-art-panel-back > span {
+  background: var(--ex-accent) !important;
+  opacity: 0.4;
+}
+
+.dh-art-note {
+  background: var(--ex-bg) !important;
+  border-color: var(--ex-line) !important;
+  color: var(--ex-text) !important;
+}
+
+.dh-art-word,
+.dh-art-note > span {
+  color: var(--ex-accent) !important;
+}
+
+.pc-card {
+  color: var(--ex-text) !important;
+  border-color: var(--ex-line) !important;
+
+  background:
+    radial-gradient(
+      280px at
+      var(--pc-light-x, 50%)
+      var(--pc-light-y, 30%),
+      color-mix(
+        in srgb,
+        var(--ex-accent) 22%,
+        var(--ex-bg)
+      ),
+      var(--ex-bg)
+    ) !important;
+}
+
+.pc-toggle,
+.pc-note {
+  background: var(--ex-bg) !important;
+  color: var(--ex-text) !important;
+  border-color: var(--ex-line) !important;
+}
+
+.pc-centre {
+  background: var(--ex-accent) !important;
+  border-color: var(--ex-accent) !important;
+}
+
+.sl-footer,
+.pt-tab-list,
+.ps-billing-options,
+.pte-table thead {
+  background: var(--ex-raised) !important;
+  border-color: var(--ex-line) !important;
+}
+
+.pt-panel {
+  box-shadow: inset 3px 0 0 var(--ex-accent);
+}
+
+/* Data and progress */
+
+.pte-table tbody :is(th, td) {
+  color: var(--ex-text) !important;
+}
+
+.pte-table tbody tr:hover {
+  background: var(--ex-raised) !important;
+}
+
+.pte-status {
+  background: var(--ex-raised) !important;
+  color: var(--ex-text) !important;
+  border-color: var(--ex-line) !important;
+}
+
+.pte-status[data-status="Complete"] {
+  background: #21492e !important;
+  color: #c2f4ba !important;
+}
+
+.pte-status[data-status="Review"] {
+  background: #4c3b17 !important;
+  color: #ffe5a4 !important;
+}
+
+:is(.ib-progress, .pte-progress-cell progress) {
+  accent-color: #73c78a;
+}
+
+:is(
+  .ib-progress,
+  .pte-progress-cell progress
+)::-webkit-progress-bar {
+  background: var(--ex-bg);
+}
+
+:is(
+  .ib-progress,
+  .pte-progress-cell progress
+)::-webkit-progress-value {
+  background: #73c78a;
+}
+
+:is(
+  .ib-progress,
+  .pte-progress-cell progress
+)::-moz-progress-bar {
+  background: #73c78a;
+}
+
+.lse-skeleton span,
+.ds-content-illustration span {
+  background: var(--ex-line) !important;
+}
+
+.lse-result-icon,
+.tw-toast-symbol {
+  background: var(--ex-accent) !important;
+  color: var(--ex-ink) !important;
+}
+
+.tw-undo {
+  color: var(--ex-text) !important;
+}
+
+.tw-dismiss {
+  color: var(--ex-muted) !important;
+  background: transparent !important;
+}
+
+/* Errors and selected states */
+
+.ps-card.ps-selected {
+  border-color: var(--ex-accent) !important;
+  box-shadow: inset 0 3px 0 var(--ex-accent);
+}
+
+.contact-form-example .cf-field-error,
+.loading-states-example .lse-status[data-status="error"] {
+  color: #ffb5be !important;
+}
+
+.cf-error-summary {
+  background: #421f2b !important;
+  border-color: #b95d72 !important;
+  color: #ffb5be !important;
+}
+
+.cf-error-summary :is(strong, button) {
+  color: #ffd6dc !important;
+}
+
+.cf-error-summary button {
+  background: transparent !important;
+}
+
+.cf-field :is(
+  input,
+  textarea
+)[aria-invalid="true"] {
+  border-color: #db7589 !important;
+}
+
+:root[data-theme="light"]
+  .contact-form-example .cf-field-error,
+:root[data-theme="light"]
+  .loading-states-example .lse-status[data-status="error"] {
+  color: #9a2337 !important;
+}
+
+/* Preserve variant changes inside interactive examples. */
+
+.direction-hero {
+  --ex-accent: var(--dh-accent, #b9f56d);
+}
+
+.qc-theme-sage {
+  background:
+    color-mix(
+      in srgb,
+      #82b871 16%,
+      var(--ex-bg)
+    ) !important;
+}
+
+.qc-theme-clay {
+  background:
+    color-mix(
+      in srgb,
+      #e39568 16%,
+      var(--ex-bg)
+    ) !important;
+}
+
+.qc-theme-lavender {
+  background:
+    color-mix(
+      in srgb,
+      #ad89db 16%,
+      var(--ex-bg)
+    ) !important;
+}
+
+.tw-toast-info {
+  --ex-accent: #93e3fc;
+  --ex-ink: #10323c;
+}
+
+.tw-toast-undo {
+  --ex-accent: #ffd396;
+  --ex-ink: #382609;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dc-example,
+  .pc-card {
+    background: var(--ex-bg) !important;
+  }
+}

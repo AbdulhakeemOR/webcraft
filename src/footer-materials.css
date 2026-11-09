@@ -1,0 +1,168 @@
+﻿/* Application footer only.
+   Does not target the Studio Footer sample. */
+
+.atlas-footer.material-footer {
+  position: relative;
+  margin-top: 60px;
+  padding: 48px 24px 24px;
+  overflow: hidden;
+  border-top: 1px solid #8293a8;
+  background:
+    radial-gradient(ellipse at 0% 0%, #5b779b33, transparent 60%),
+    linear-gradient(135deg, #303c4b, #172331);
+  color: #dce8f9;
+  box-shadow: inset 0 2px 1px #ffffff26, 0 -7px 0 #14202f;
+  color-scheme: dark;
+}
+
+.material-footer::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c0d6f340, transparent);
+  pointer-events: none;
+}
+
+.material-footer .atlas-footer-content {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: clamp(24px, 4vw, 60px);
+  padding-block: 16px 36px;
+}
+
+/* Brand and project description */
+.material-footer .atlas-footer-introduction .brand { color: #f0f5fc; }
+.material-footer .brand .muted { color: #a6bad3; }
+.material-footer .brand-mark span { border-color: #a4c3ef; }
+.material-footer .atlas-footer-introduction > p {
+  max-width: 380px;
+  margin-block: 22px;
+  color: #b5c7df;
+  font-size: 14px;
+  line-height: 1.85;
+}
+.material-footer .atlas-footer-credit {
+  display: block;
+  max-width: 360px;
+  color: #9fb4cf;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* Frosted navigation plates */
+.material-footer .atlas-footer-navigation {
+  min-width: 0;
+  padding: 23px;
+  border: 1px solid #7b94b340;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff0d, #ffffff03);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 0 #ffffff20, 0 3px 0 #10203366;
+}
+.material-footer .atlas-footer-navigation h2 {
+  margin: 0 0 17px;
+  color: #e5efff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.material-footer .atlas-footer-navigation ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.material-footer .atlas-footer-navigation a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #b7cbe6;
+  font-size: 12px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: background 160ms ease, border-color 160ms ease, transform 130ms ease;
+}
+.material-footer .atlas-footer-navigation a::after {
+  content: "↗";
+  flex-shrink: 0;
+  color: #8eafd9;
+  font-size: 16px;
+}
+
+/* Recessed statistics strip */
+.material-footer .atlas-footer-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  padding: 8px;
+  border: 1px solid #4e6787;
+  border-radius: 13px;
+  background: #111f31;
+  box-shadow: inset 0 3px 5px #00000066, 0 1px 0 #ffffff20;
+}
+.material-footer .atlas-footer-summary > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 12px;
+  border-right: 1px solid #526c8c40;
+  color: #aec8ec;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+.material-footer .atlas-footer-summary > span:last-child { border-right: 0; }
+.material-footer .atlas-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #7189a433;
+  color: #9db4d1;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.material-footer a:focus-visible { outline: 3px solid #a4c8ff; outline-offset: 4px; }
+
+@media (hover: hover) and (pointer: fine) {
+  .material-footer .atlas-footer-navigation a:hover {
+    border-color: #718fb34d;
+    background: linear-gradient(#465f7d80, #2e466380);
+    color: #f0f6ff;
+    box-shadow: inset 0 1px 0 #ffffff20, 0 2px 0 #102138;
+  }
+  .material-footer .atlas-footer-navigation a:active {
+    transform: translateY(2px);
+    box-shadow: inset 0 1px 2px #00000026;
+  }
+}
+@media (max-width: 850px) {
+  .material-footer .atlas-footer-content { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .material-footer .atlas-footer-introduction { grid-column: 1 / -1; }
+}
+@media (max-width: 520px) {
+  .atlas-footer.material-footer { padding-inline: 18px; }
+  .material-footer .atlas-footer-content { grid-template-columns: 1fr; gap: 20px; }
+  .material-footer .atlas-footer-introduction { grid-column: auto; }
+  .material-footer .atlas-footer-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .material-footer .atlas-footer-summary > span:nth-child(2) { border-right: 0; }
+  .material-footer .atlas-footer-summary > span:nth-child(-n + 2) { border-bottom: 1px solid #526c8c40; }
+  .material-footer .atlas-footer-bottom { align-items: flex-start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .material-footer .atlas-footer-navigation a { transition: none; }
+}

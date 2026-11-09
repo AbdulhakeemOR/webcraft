@@ -1,0 +1,240 @@
+/* Editor chrome only — no rules target playground-live-button. */
+
+.playground.material-playground {
+  margin-top: 38px;
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid #e7eff9;
+  border-radius: 21px;
+  background: linear-gradient(135deg, #e2ebf5, #b9cce2);
+  color: #3b5b80;
+  box-shadow:
+    inset 0 2px 1px #fff,
+    0 5px 0 #809bbb,
+    0 16px 22px #17365526;
+  color-scheme: light;
+}
+
+.material-playground .playground-heading {
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.material-playground .playground-heading .eyebrow {
+  color: #557eae;
+}
+
+.material-playground .playground-heading h2 {
+  color: #2c4f79;
+  font-size: clamp(25px, 3vw, 33px);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.material-playground .playground-heading p:not(.eyebrow) {
+  color: #506f94;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Editor action keys */
+
+.material-playground .playground-heading > button,
+.material-playground .playground-code-heading > button {
+  min-height: 44px;
+  padding: 11px 16px;
+  border: 1px solid #8aaad5;
+  border-radius: 9px;
+  background: linear-gradient(#f2f7ff, #bfd4ef);
+  color: #3b6498;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 3px 0 #87a4c9,
+    0 6px 6px #29496c1a;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 130ms ease, box-shadow 130ms ease;
+}
+
+.material-playground .playground-heading > button:active,
+.material-playground .playground-code-heading > button:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 1px 2px #355b8b26, 0 1px 0 #87a4c9;
+}
+
+/* Settings housing */
+
+.material-playground .playground-layout {
+  gap: 22px;
+}
+
+.material-playground .playground-controls {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #f5faff;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #f0f6fd, #cedff2);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 3px 0 #9cb5d3;
+}
+
+.material-playground .playground-field {
+  color: #41678f;
+  font-size: 12px;
+}
+
+.material-playground .playground-field input[type="text"],
+.material-playground .playground-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid #8faed1;
+  border-radius: 9px;
+  background: linear-gradient(#c7daf0, #e8f2fc);
+  color: #2b527e;
+  box-shadow:
+    inset 0 2px 4px #355d8b26,
+    0 1px 0 #fff;
+  font: inherit;
+  font-size: 13px;
+}
+
+.material-playground .playground-field input[type="text"]::placeholder {
+  color: #5f7fa4;
+}
+
+.material-playground .playground-color-row {
+  gap: 12px;
+  padding: 9px;
+  border: 1px solid #9ab4d3;
+  border-radius: 10px;
+  background: #d7e6f6;
+  box-shadow: inset 0 2px 3px #355d8b20;
+}
+
+.material-playground .playground-color-row input[type="color"] {
+  width: 48px;
+  height: 44px;
+  padding: 4px;
+  border: 1px solid #92aed0;
+  border-radius: 8px;
+  background: #edf5ff;
+  cursor: pointer;
+}
+
+.material-playground .playground-color-row code {
+  background: transparent;
+  color: #426b9b;
+  font-size: 12px;
+}
+
+.material-playground .playground-range-label output {
+  padding: 5px 8px;
+  border: 1px solid #9eb8d7;
+  border-radius: 6px;
+  background: #c3d8ef;
+  color: #3b6495;
+  box-shadow: inset 0 1px 2px #355d8b26;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+}
+
+.material-playground .playground-field input[type="range"] {
+  width: 100%;
+  min-height: 44px;
+  accent-color: #4c7cb9;
+  cursor: pointer;
+}
+
+.material-playground .playground-hint {
+  color: #56769c;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* Only the preview's outer frame is styled. */
+
+.material-playground .playground-preview {
+  min-width: 0;
+  border: 1px solid #8faccd;
+  border-radius: 15px;
+  box-shadow:
+    inset 0 3px 6px #25466b20,
+    0 1px 0 #ffffffb3;
+}
+
+/* Source display */
+
+.material-playground .playground-code-heading {
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 25px;
+  padding: 16px;
+  border: 1px solid #6687ae;
+  border-radius: 13px 13px 0 0;
+  background: linear-gradient(#3e5c80, #2a4568);
+  color: #d5e7ff;
+}
+
+.material-playground .playground-code-heading > .mono {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: #d5e7ff;
+  font-size: 11px;
+}
+
+.material-playground .playground-code {
+  margin-top: 0;
+  overflow-x: auto;
+  padding: 22px;
+  border: 1px solid #6687ae;
+  border-top: 0;
+  border-radius: 0 0 13px 13px;
+  background: #14253c;
+  color: #e0ecff;
+  box-shadow: inset 0 3px 6px #00000026;
+  font-size: 13px;
+  line-height: 1.8;
+  tab-size: 2;
+  color-scheme: dark;
+}
+
+.material-playground .playground-copy-status {
+  color: #365f91;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Focus only editor controls, not the live example. */
+
+.material-playground .playground-controls
+:is(input, select):focus-visible,
+.material-playground .playground-heading > button:focus-visible,
+.material-playground .playground-code-heading > button:focus-visible {
+  outline: 3px solid #315f91;
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .playground.material-playground {
+    padding: 22px 16px;
+  }
+
+  .material-playground .playground-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .material-playground .playground-controls {
+    padding: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .material-playground .playground-heading > button,
+  .material-playground .playground-code-heading > button {
+    transition: none;
+  }
+}

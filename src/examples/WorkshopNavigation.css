@@ -1,0 +1,222 @@
+/* Scoped styles keep this example separate from the library interface. */
+
+.workshop-navigation-demo {
+  container-name: workshop-nav;
+  container-type: inline-size;
+
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+
+  border: 1px solid #d7dcd4;
+  border-radius: 14px;
+
+  background: #f5f6ef;
+  color: #20382d;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.workshop-navigation-demo,
+.workshop-navigation-demo * {
+  box-sizing: border-box;
+}
+
+.workshop-navigation-demo button {
+  min-height: 44px;
+  margin: 0;
+  border: 0;
+  border-radius: 6px;
+
+  background: transparent;
+  color: #20382d;
+
+  font: inherit;
+  cursor: pointer;
+}
+
+.workshop-navigation-demo button:focus-visible {
+  outline: 3px solid #436650;
+  outline-offset: 3px;
+}
+
+.wn-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 14px 18px;
+  border-bottom: 1px solid #d7dcd4;
+}
+
+.workshop-navigation-demo .wn-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0 4px;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.wn-brand-mark {
+  display: grid;
+  place-items: center;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+
+  background: #20382d;
+  color: #f5f6ef;
+
+  font-family: Georgia, serif;
+  font-size: 22px;
+}
+
+.wn-desktop-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wn-desktop-links button {
+  padding: 10px 12px;
+  font-size: 12px;
+}
+
+.wn-desktop-links button:hover,
+.wn-desktop-links button[aria-pressed="true"] {
+  background: #e2e8dd;
+}
+
+.workshop-navigation-demo .wn-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 10px 12px;
+  border: 1px solid #c4cec2;
+
+  font-size: 12px;
+}
+
+.wn-menu-toggle span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.wn-mobile-links {
+  display: none;
+  width: 100%;
+}
+
+.wn-mobile-links button {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  width: 100%;
+  padding: 12px 8px;
+  border-top: 1px solid #d7dcd4;
+  border-radius: 0;
+
+  text-align: left;
+  font-size: 13px;
+}
+
+.wn-mobile-links button:hover,
+.wn-mobile-links button[aria-pressed="true"] {
+  background: #e2e8dd;
+}
+
+.wn-link-number {
+  color: #5a6e5d;
+  font-family: monospace;
+  font-size: 10px;
+}
+
+.wn-link-arrow {
+  margin-left: auto;
+}
+
+.wn-page-preview {
+  padding: 30px 24px;
+}
+
+.wn-caption {
+  color: #526653;
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.workshop-navigation-demo .wn-page-preview h3 {
+  margin: 14px 0 10px;
+
+  color: #20382d;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+.wn-page-preview p {
+  min-height: 42px;
+  margin: 0;
+
+  color: #526653;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.wn-demo-note {
+  display: block;
+  margin-top: 28px;
+
+  color: #526653;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* Respond to the example container, including gallery previews. */
+
+@container workshop-nav (max-width: 520px) {
+  .wn-desktop-links {
+    display: none;
+  }
+
+  .workshop-navigation-demo .wn-menu-toggle {
+    display: inline-flex;
+  }
+
+  .wn-mobile-links:not([hidden]) {
+    display: grid;
+  }
+}
+
+@container workshop-nav (max-width: 280px) {
+  .wn-bar {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .workshop-navigation-demo .wn-brand {
+    gap: 7px;
+    font-size: 12px;
+  }
+
+  .workshop-navigation-demo .wn-menu-toggle {
+    gap: 8px;
+    padding-inline: 8px;
+  }
+
+  .wn-page-preview {
+    padding: 24px 16px;
+  }
+}

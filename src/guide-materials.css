@@ -1,0 +1,332 @@
+/* Webcraft Atlas documentation interface only */
+
+.material-guides,
+.material-guide {
+  margin-block: 28px 60px;
+  padding: clamp(24px, 4vw, 52px);
+  border: 1px solid #eaf0f6;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #edf1f5, #d4dde7);
+  color: #354b65;
+  box-shadow:
+    inset 0 2px 1px #fff,
+    0 5px 0 #a2b1c3,
+    0 18px 28px #26394e20;
+  color-scheme: light;
+}
+
+.material-guides > .eyebrow,
+.material-guide .eyebrow {
+  color: #58759b;
+}
+
+.material-guides > .page-title,
+.material-guide .guide-article-header .page-title {
+  color: #293f5b;
+  font-size: clamp(36px, 4.8vw, 62px);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.material-guides > .intro,
+.material-guide .guide-article-header .intro {
+  color: #536b87;
+  line-height: 1.8;
+}
+
+/* Guide directory */
+
+.material-guides .guide-directory {
+  gap: 26px;
+}
+
+.material-guides .guide-directory-card {
+  min-width: 0;
+  padding: clamp(23px, 3vw, 32px);
+  border: 1px solid #fff;
+  border-radius: 19px;
+  background:
+    linear-gradient(125deg, #ffffffb3, transparent 75%),
+    linear-gradient(135deg, #f1f6fc, #d6e2ef);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 4px 0 #adbed2,
+    0 12px 16px #334d6e1a;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.material-guides .guide-card-meta {
+  gap: 12px;
+  color: #637c9b;
+  font-size: 11px;
+}
+
+.material-guides .guide-card-meta .eyebrow {
+  color: #5075a3;
+}
+
+.material-guides .guide-directory-card h2 {
+  color: #304e74;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.material-guides .guide-directory-card h2 a {
+  color: inherit;
+}
+
+.material-guides .guide-directory-card > p {
+  color: #59718f;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Mechanical read key */
+
+.material-guides .guide-read-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 45px;
+  padding: 11px 17px;
+  border: 1px solid #94b1dc;
+  border-radius: 9px;
+  background: linear-gradient(#e0ecff, #b4cbed);
+  color: #315c94;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 3px 0 #8ea8cc;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 130ms ease, box-shadow 130ms ease;
+}
+
+.material-guides .guide-read-link:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 1px 2px #3b619526, 0 1px 0 #8ea8cc;
+}
+
+/* Article header */
+
+.material-guide > .text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #416da3;
+}
+
+.material-guide .guide-article-header {
+  padding-bottom: 28px;
+  border-bottom: 1px solid #9fb2ca80;
+}
+
+.material-guide .guide-article-header > button {
+  min-height: 44px;
+  padding: 10px 15px;
+  border: 1px solid #a2b7d1;
+  border-radius: 9px;
+  background: linear-gradient(#f6faff, #cadbef);
+  color: #416493;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 3px 0 #94abc8;
+  cursor: pointer;
+}
+
+.material-guide .guide-article-header > button:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 1px 2px #3b619526, 0 1px 0 #94abc8;
+}
+
+/* Comfortable reading measure */
+
+.material-guide .guide-article-body {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.material-guide .guide-article-section {
+  margin-top: 42px;
+}
+
+.material-guide .guide-article-section > h2 {
+  color: #304b6d;
+  font-size: clamp(25px, 3vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.material-guide .guide-article-section > p {
+  color: #425d7c;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* Code is displayed in a separate recessed instrument. */
+
+.material-guide .guide-code-example {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #7c95b5;
+  border-radius: 13px;
+  background: #17263b;
+  box-shadow:
+    inset 0 2px 5px #00000033,
+    0 3px 0 #a2b3ca;
+  color-scheme: dark;
+}
+
+.material-guide .guide-code-filename {
+  padding: 13px 17px;
+  border-bottom: 1px solid #49627f;
+  background: linear-gradient(#364d6a, #273c58);
+  color: #ccdcf4;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+}
+
+.material-guide .guide-code-content {
+  margin: 0;
+  padding: 20px;
+  overflow-x: auto;
+  background: #142237;
+  color: #e0ebfc;
+  font-size: 13px;
+  line-height: 1.8;
+  tab-size: 2;
+}
+
+/* Checklist insert */
+
+.material-guide .guide-checklist {
+  padding: 24px;
+  border: 1px solid #b3c5dd;
+  border-radius: 15px;
+  background:
+    linear-gradient(125deg, #ffffff80, transparent),
+    #dce7f5;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 3px 0 #a8bdd8;
+}
+
+.material-guide .guide-checklist h3 {
+  color: #365a87;
+  font-size: 19px;
+}
+
+.material-guide .guide-checklist li {
+  color: #46678f;
+  line-height: 1.85;
+}
+
+.material-guide .guide-checklist li::marker {
+  color: #5c87bf;
+}
+
+/* Related examples are links, not restyled samples. */
+
+.material-guide .guide-related {
+  padding-top: 30px;
+  border-top: 1px solid #9fb2ca80;
+}
+
+.material-guide .guide-related h2 {
+  color: #304b6d;
+  letter-spacing: -0.035em;
+}
+
+.material-guide .guide-example-links {
+  gap: 14px;
+}
+
+.material-guide .guide-example-links > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  min-height: 54px;
+  padding: 15px 18px;
+  border: 1px solid #b5c6dc;
+  border-radius: 10px;
+  background: linear-gradient(#f8fbff, #d2e0f1);
+  color: #3c6090;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 3px 0 #9eb4d0;
+  text-decoration: none;
+  transition: transform 130ms ease, box-shadow 130ms ease;
+}
+
+.material-guide .guide-example-links > a:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 1px 2px #3b619526, 0 1px 0 #9eb4d0;
+}
+
+.material-guide .guide-next {
+  border-color: #9fb2ca80;
+}
+
+.material-guide .guide-next > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #38669f;
+  line-height: 1.6;
+}
+
+.material-guides a:focus-visible,
+.material-guide :is(a, button, pre):focus-visible {
+  outline: 3px solid #315f91;
+  outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .material-guides .guide-directory-card:hover,
+  .material-guides .guide-directory-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow:
+      inset 0 1px 0 #fff,
+      0 4px 0 #adbed2,
+      0 20px 22px #334d6e26;
+  }
+}
+
+@media (max-width: 760px) {
+  .material-guides,
+  .material-guide {
+    padding: 25px 18px;
+    border-radius: 18px;
+  }
+
+  .material-guides .guide-directory {
+    grid-template-columns: 1fr;
+  }
+
+  .material-guides .guide-card-meta {
+    flex-wrap: wrap;
+  }
+
+  .material-guide .guide-article-section > p {
+    font-size: 15px;
+  }
+
+  .material-guide .guide-checklist {
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .material-guides .guide-directory-card,
+  .material-guides .guide-read-link,
+  .material-guide .guide-example-links > a {
+    transition: none;
+  }
+
+  .material-guides .guide-directory-card:hover,
+  .material-guides .guide-directory-card:focus-within {
+    transform: none;
+  }
+}

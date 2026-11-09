@@ -1,0 +1,79 @@
+.pgb-example {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+
+  width: 100%;
+  min-width: 0;
+  padding: 20px;
+
+  border: 1px solid #414052;
+  border-radius: 12px;
+
+  background: #191923;
+  color: #f4f1fc;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.pgb-example,
+.pgb-example * {
+  box-sizing: border-box;
+}
+
+.pgb-example .pgb-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  max-width: 100%;
+  min-height: 46px;
+  padding: 14px 18px;
+
+  border: 1px solid #a98bdd;
+  border-radius: 9px;
+
+  background: #7051be;
+  color: #ffffff;
+
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+
+  cursor: pointer;
+  transition: transform 180ms, background 180ms;
+}
+
+.pgb-button > span:last-child {
+  flex-shrink: 0;
+}
+
+.pgb-example .pgb-button:hover {
+  transform: translateY(-2px);
+  background: #8061cf;
+}
+
+.pgb-example .pgb-button:focus-visible {
+  outline: 3px solid #c6afff;
+  outline-offset: 4px;
+}
+
+.pgb-feedback {
+  margin: 0;
+  color: #c0b7d0;
+  font-size: 11px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pgb-example .pgb-button {
+    transition: none;
+  }
+
+  .pgb-example .pgb-button:hover {
+    transform: none;
+  }
+}

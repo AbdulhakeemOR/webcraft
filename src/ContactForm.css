@@ -1,0 +1,244 @@
+/* -------------------------------------------------------
+   Scoped contact-form example
+------------------------------------------------------- */
+
+.contact-form-example {
+  width: 100%;
+  max-width: 560px;
+  min-width: 0;
+  margin-inline: auto;
+  padding: 26px;
+
+  border: 1px solid #d8d6df;
+  border-radius: 16px;
+
+  background: #faf8ff;
+  color: #302b41;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color-scheme: light;
+}
+
+.contact-form-example,
+.contact-form-example * {
+  box-sizing: border-box;
+}
+
+.cf-eyebrow {
+  color: #655280;
+  font-family: monospace;
+  font-size: 9px;
+  line-height: 1.6;
+  letter-spacing: 1.4px;
+}
+
+.contact-form-example .cf-heading h3 {
+  margin: 14px 0;
+  color: #302b41;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.6px;
+}
+
+.cf-heading p {
+  margin: 0 0 24px;
+  color: #655e73;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Fields */
+
+.cf-field {
+  display: grid;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.cf-field label {
+  color: #302b41;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cf-required {
+  color: #655e73;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.cf-field input,
+.cf-field textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 12px;
+
+  border: 1px solid #ada5bc;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #302b41;
+
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.cf-field textarea {
+  min-height: 125px;
+  resize: vertical;
+}
+
+.cf-field input[aria-invalid="true"],
+.cf-field textarea[aria-invalid="true"] {
+  border: 2px solid #a12536;
+}
+
+.contact-form-example input:focus-visible,
+.contact-form-example textarea:focus-visible,
+.contact-form-example button:focus-visible {
+  outline: 3px solid #73519d;
+  outline-offset: 4px;
+}
+
+.cf-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cf-counter {
+  color: #655e73;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.cf-field .cf-hint {
+  margin: 0;
+  color: #655e73;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.cf-field .cf-field-error {
+  margin: 0;
+  color: #a12536;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Error summary */
+
+.cf-error-summary {
+  margin-bottom: 24px;
+  padding: 16px;
+
+  border: 1px solid #b93f4d;
+  border-radius: 10px;
+
+  background: #fff0f1;
+  color: #852333;
+
+  font-size: 13px;
+}
+
+.cf-error-summary ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.contact-form-example .cf-error-summary button {
+  min-height: 44px;
+  padding: 8px 0;
+
+  border: 0;
+  border-radius: 2px;
+
+  background: transparent;
+  color: #852333;
+
+  font: inherit;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  cursor: pointer;
+}
+
+/* Actions */
+
+.cf-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.contact-form-example .cf-submit,
+.contact-form-example .cf-reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  min-height: 46px;
+  padding: 12px 16px;
+  border-radius: 8px;
+
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.contact-form-example .cf-submit {
+  border: 1px solid #644384;
+  background: #644384;
+  color: #ffffff;
+}
+
+.contact-form-example .cf-submit:hover {
+  background: #755196;
+}
+
+.contact-form-example .cf-reset {
+  border: 1px solid #ada5bc;
+  background: transparent;
+  color: #4d405e;
+}
+
+.contact-form-example .cf-reset:hover {
+  background: #eee8f6;
+}
+
+.cf-confirmation {
+  min-height: 24px;
+  margin: 20px 0 0;
+  color: #285a3a;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.cf-demo-note {
+  margin: 20px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid #d8d6df;
+
+  color: #655e73;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+@media (max-width: 480px) {
+  .contact-form-example {
+    padding: 20px;
+  }
+
+  .cf-actions > button {
+    flex: 1;
+  }
+}

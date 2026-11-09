@@ -1,0 +1,1035 @@
+/* =======================================================
+   GLOBAL VISUAL SYSTEM
+   Import after existing application styles.
+======================================================= */
+
+/* Dark theme */
+
+:root,
+body:has(.home-v2) {
+  color-scheme: dark;
+
+  --background: #080b10;
+  --panel: #141b26;
+  --raised: #1d2735;
+
+  --text: #eff5ff;
+  --muted: #a8b7cd;
+  --border: #344256;
+
+  --accent: #b9f56d;
+  --button: #b9f56d;
+  --button-hover: #cdfa97;
+  --accent-ink: #122005;
+
+  --glass: rgb(20 27 38 / 82%);
+  --glass-strong: rgb(17 24 35 / 96%);
+  --line: rgb(174 202 237 / 17%);
+
+  --glow: rgb(153 222 93 / 11%);
+  --secondary-glow: rgb(73 163 229 / 12%);
+  --shadow: 0 18px 50px rgb(0 0 0 / 24%);
+
+  --demo-scheme: dark;
+
+  --source-comment: #a2b2c7;
+  --source-string: #b9e994;
+  --source-keyword: #c9b2ff;
+  --source-tag: #80dafa;
+  --source-number: #ffd09b;
+  --source-property: #9de4d6;
+  --source-color: #ffb4d7;
+}
+
+/* Light theme */
+
+:root[data-theme="light"],
+:root[data-theme="light"] body:has(.home-v2) {
+  color-scheme: light;
+
+  --background: #f0f5f4;
+  --panel: #ffffff;
+  --raised: #e8f0ee;
+
+  --text: #122520;
+  --muted: #526b64;
+  --border: #c2d4cf;
+
+  --accent: #2a6537;
+  --button: #245a32;
+  --button-hover: #347343;
+  --accent-ink: #ffffff;
+
+  --glass: rgb(255 255 255 / 85%);
+  --glass-strong: rgb(250 254 252 / 97%);
+  --line: rgb(40 88 65 / 19%);
+
+  --glow: rgb(108 184 90 / 12%);
+  --secondary-glow: rgb(49 141 185 / 10%);
+  --shadow: 0 18px 50px rgb(39 80 61 / 8%);
+
+  --demo-scheme: light;
+
+  --source-comment: #596b63;
+  --source-string: #326125;
+  --source-keyword: #743a9d;
+  --source-tag: #175e7c;
+  --source-number: #84430f;
+  --source-property: #136456;
+  --source-color: #913b65;
+}
+
+/* Foundation */
+
+html {
+  scroll-padding-top: 100px;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+
+  font-family:
+    "Inter",
+    "Segoe UI Variable",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+#root,
+.visual-app {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+}
+
+.visual-app {
+  overflow-x: clip;
+}
+
+.visual-app ::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.visual-app :is(
+  button,
+  a,
+  input,
+  select,
+  textarea,
+  summary
+):focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.visual-app .container {
+  max-width: 1360px;
+}
+
+.visual-app .section {
+  padding-top: 64px;
+  padding-bottom: 80px;
+}
+
+/* Ambient scene */
+
+.va-scene {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.va-glow {
+  position: absolute;
+  width: 65vw;
+  height: 65vw;
+  max-width: 1000px;
+  max-height: 1000px;
+  border-radius: 50%;
+
+  transform: translateY(var(--scene-y, 0px));
+}
+
+.va-glow-one {
+  top: -25vw;
+  left: -15vw;
+
+  background:
+    radial-gradient(
+      circle,
+      var(--glow),
+      transparent 66%
+    );
+}
+
+.va-glow-two {
+  top: 0;
+  right: -35vw;
+
+  background:
+    radial-gradient(
+      circle,
+      var(--secondary-glow),
+      transparent 66%
+    );
+}
+
+.va-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+
+  background-size: 88px 88px;
+
+  mask-image:
+    linear-gradient(#000000, transparent 65%);
+}
+
+.va-scroll-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+
+  height: 2px;
+  background: var(--accent);
+
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+}
+
+/* Typography */
+
+.visual-app :is(.page-title, .hero h1) {
+  font-weight: 750;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.visual-app .page-title {
+  max-width: 950px;
+  font-size: clamp(36px, 4.6vw, 66px);
+  line-height: 1.07;
+}
+
+.visual-app :is(h2, h3) {
+  text-wrap: balance;
+}
+
+.visual-app .intro {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.visual-app .eyebrow {
+  color: var(--accent);
+  font: 600 11px/1.8 "Segoe UI", sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.visual-app .text-link {
+  font-size: 14px;
+}
+
+/* Frosted navigation */
+
+.visual-app .site-header {
+  position: sticky;
+  top: 12px;
+  z-index: 20;
+
+  max-width: 1280px;
+  min-height: 74px;
+  margin: 12px auto 0;
+  padding: 14px 28px;
+
+  border: 1px solid var(--line);
+  border-radius: 16px;
+
+  background: var(--glass);
+  backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: 0 8px 30px #00000008;
+}
+
+.visual-app .brand {
+  font-weight: 750;
+  letter-spacing: -0.7px;
+}
+
+.visual-app .brand-mark {
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 0 8px var(--glow));
+}
+
+.visual-app .navigation a {
+  position: relative;
+  color: var(--muted);
+  transition: color 160ms;
+}
+
+.visual-app .navigation a:hover,
+.visual-app .navigation a[aria-current] {
+  color: var(--text);
+}
+
+.visual-app .navigation a[aria-current]::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: -7px;
+
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.visual-app :is(
+  .theme-picker select,
+  .command-trigger,
+  .menu-toggle
+) {
+  border-color: var(--line);
+  border-radius: 9px;
+  background: var(--raised);
+}
+
+.visual-app select option {
+  background: var(--panel);
+  color: var(--text);
+}
+
+/* Buttons and controls */
+
+.visual-app button {
+  transition:
+    background 160ms,
+    border-color 160ms,
+    box-shadow 160ms,
+    transform 160ms;
+}
+
+.visual-app :is(
+  .button-primary,
+  .detail-download-bundle
+) {
+  min-height: 46px;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  background: var(--button);
+  color: var(--accent-ink);
+
+  font-weight: 650;
+  box-shadow: 0 4px 16px var(--glow);
+}
+
+.visual-app :is(
+  .button-primary,
+  .detail-download-bundle
+):hover {
+  transform: translateY(-2px);
+  background: var(--button-hover);
+  box-shadow: 0 8px 26px var(--glow);
+}
+
+.visual-app :is(
+  .button-primary,
+  .detail-download-bundle
+):active {
+  transform: translateY(0);
+}
+
+.visual-app input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]) {
+  color: var(--text);
+}
+
+.visual-app textarea {
+  color: var(--text);
+}
+
+.visual-app :is(
+  .filter-chip,
+  .saved-filter,
+  .detail-save-button,
+  .gallery-page-numbers button
+) {
+  border-color: var(--line);
+  border-radius: 9px;
+  background: var(--glass);
+}
+
+.visual-app :is(
+  .filters,
+  .filter-group,
+  .home-category-controls
+) button[aria-pressed="true"],
+.visual-app .gallery-page-numbers button[aria-current] {
+  border-color: var(--accent);
+  background: var(--raised);
+  color: var(--accent);
+}
+
+.visual-app :is(
+  .search-field,
+  .sort-control select,
+  .detail-preview-controls select,
+  .workspace-controls select
+) {
+  border-color: var(--line);
+  border-radius: 10px;
+  background: var(--glass);
+}
+
+.visual-app .search-field:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--glow);
+}
+
+.visual-app .search-field input {
+  outline-offset: 7px;
+}
+
+/* Shared surfaces */
+
+.visual-app :is(
+  .component-card,
+  .home-feature-card,
+  .saved-page-card,
+  .guide-directory-card,
+  .section-directory-card,
+  .template-directory-card,
+  .detail-related-card,
+  .recent-example-link,
+  .about-capabilities article,
+  .compare-page-column,
+  .home-learning-panel,
+  .saved-backup,
+  .guide-checklist
+) {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--glass);
+
+  box-shadow:
+    var(--shadow),
+    inset 0 1px 0 #ffffff08;
+}
+
+.visual-app :is(
+  .component-card,
+  .home-feature-card,
+  .saved-page-card,
+  .guide-directory-card,
+  .section-directory-card,
+  .detail-related-card,
+  .recent-example-link
+) {
+  transition:
+    border-color 180ms,
+    box-shadow 180ms,
+    transform 180ms;
+}
+
+.visual-app :is(
+  .component-card,
+  .home-feature-card,
+  .saved-page-card,
+  .guide-directory-card,
+  .section-directory-card,
+  .detail-related-card,
+  .recent-example-link
+):hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+
+  box-shadow:
+    var(--shadow),
+    0 0 24px var(--glow);
+}
+
+.visual-app :is(
+  .component-information,
+  .home-feature-information
+) {
+  padding: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.visual-app :is(
+  .component-information h2,
+  .home-feature-information h3
+) {
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: -0.5px;
+}
+
+.visual-app :is(
+  .component-information p,
+  .home-feature-information p
+) {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.visual-app :is(
+  .component-canvas,
+  .home-feature-preview,
+  .template-directory-preview,
+  .workspace-stage
+) {
+  border-color: var(--line);
+  background-color: var(--background);
+
+  background-image:
+    radial-gradient(
+      var(--line) 1px,
+      transparent 1px
+    );
+
+  background-size: 22px 22px;
+  scrollbar-width: thin;
+}
+
+.visual-app .home-feature-preview {
+  height: 360px;
+  padding: 20px;
+  border: 0;
+  border-radius: 0;
+}
+
+.visual-app .home-feature-grid {
+  gap: 26px;
+}
+
+.visual-app .home-category-controls {
+  flex-wrap: nowrap;
+  gap: 8px;
+  padding: 6px 0 12px;
+  overflow-x: auto;
+}
+
+.visual-app .home-category-controls button {
+  flex-shrink: 0;
+  padding: 10px 13px;
+
+  border: 1px solid var(--line);
+  border-radius: 9px;
+
+  background: var(--glass);
+  font-size: 12px;
+}
+
+.visual-app .results-count {
+  color: var(--muted);
+  font: 12px/1.7 "Segoe UI", sans-serif;
+}
+
+/* Gallery sidebar */
+
+.visual-app :is(
+  .collection-sidebar,
+  .collection-sidebar-panel,
+  .collection-sidebar-note
+) {
+  border-color: var(--line);
+}
+
+.visual-app .collection-sidebar {
+  top: 110px;
+
+  border-radius: 16px;
+  background: var(--glass);
+  box-shadow: var(--shadow);
+}
+
+.visual-app .collection-sidebar-categories
+  button[aria-pressed="true"] {
+  border-color: var(--line);
+  background: var(--raised);
+  color: var(--accent);
+}
+
+/* Hero and interactive showcase */
+
+.visual-app .hero {
+  gap: 56px;
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.visual-app .hero h1 {
+  font-size: clamp(44px, 5.2vw, 76px);
+  line-height: 1.02;
+
+  background:
+    linear-gradient(
+      115deg,
+      var(--text) 30%,
+      var(--accent)
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  animation: va-title-in 700ms both;
+}
+
+.visual-app .hero h1 .accent {
+  color: var(--accent);
+}
+
+.visual-app .hero .intro {
+  max-width: 480px;
+  font-size: 17px;
+}
+
+.visual-app .hero-note {
+  border-color: var(--line);
+  font-size: 12px;
+}
+
+.visual-app .status-dot {
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--glow);
+}
+
+.visual-app :is(.hs-window, .assembly) {
+  position: relative;
+
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--glass);
+
+  box-shadow:
+    var(--shadow),
+    0 0 70px var(--secondary-glow);
+
+  transform:
+    perspective(1200px)
+    rotateX(var(--tilt-x, 0deg))
+    rotateY(var(--tilt-y, 0deg));
+
+  transition: transform 180ms ease-out;
+}
+
+.visual-app :is(.hs-window, .assembly)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  border-radius: inherit;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      320px at var(--spot-x, 50%) var(--spot-y, 0%),
+      #ffffff09,
+      transparent
+    );
+}
+
+.visual-app :is(
+  .hs-window-bar,
+  .hs-window-footer,
+  .hs-switcher
+) {
+  border-color: var(--line);
+  background: transparent;
+}
+
+.visual-app .hs-stage {
+  background:
+    linear-gradient(
+      145deg,
+      var(--secondary-glow),
+      var(--background)
+    );
+}
+
+.visual-app .hs-card {
+  transform: rotate(-3deg);
+  border-radius: 16px;
+
+  box-shadow:
+    8px 16px 0 #00000016,
+    0 30px 50px #00000022;
+
+  transition: transform 200ms;
+}
+
+.visual-app .hs-card:hover {
+  transform: rotate(0deg) translateY(-4px);
+}
+
+.visual-app .hs-card-art {
+  background: #bcf278;
+}
+
+.visual-app .hs-art-disc {
+  border-color: #eafa99;
+}
+
+.visual-app .hs-art-square {
+  border-color: #102b1b;
+  background: #204d37;
+}
+
+.visual-app .hs-card-art > span {
+  color: #233914;
+}
+
+.visual-app .hs-demo-button {
+  border-color: #8dc248;
+  background: #b9f56d;
+  color: #132408;
+  box-shadow: 0 5px 0 #42672a;
+}
+
+.visual-app .hs-demo-button:hover {
+  box-shadow: 0 7px 0 #42672a;
+}
+
+.visual-app .hs-demo-button:active {
+  box-shadow: 0 2px 0 #42672a;
+}
+
+.visual-app .home-collection-summary {
+  padding-block: 28px;
+  border-color: var(--line);
+}
+
+.visual-app .home-collection-summary strong {
+  font-size: 30px;
+  font-weight: 650;
+}
+
+.visual-app .home-collection-summary > div > span {
+  font-size: 13px;
+}
+
+.visual-app .section-heading h2 {
+  font-size: clamp(27px, 3vw, 38px);
+  font-weight: 650;
+  letter-spacing: -1.2px;
+}
+
+.visual-app .step h3 {
+  font-size: 23px;
+  font-weight: 650;
+}
+
+.visual-app .step p {
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* Source viewer, playground, and preview workspace */
+
+.visual-app :is(
+  .preview-workspace,
+  .detail-source-panel,
+  .playground,
+  .guide-code-example
+) {
+  border-color: var(--line);
+  border-radius: 14px;
+  background: var(--glass);
+  box-shadow: var(--shadow);
+}
+
+.visual-app :is(
+  .detail-view-bar,
+  .detail-file-list,
+  .detail-source-tools,
+  .detail-source-footer,
+  .workspace-controls,
+  .workspace-footer,
+  .workspace-width-slider,
+  .playground-heading,
+  .playground-controls,
+  .playground-code-heading,
+  .guide-code-filename
+) {
+  border-color: var(--line);
+  background: var(--glass);
+}
+
+.visual-app :is(
+  .detail-code-layout,
+  .detail-source-code,
+  .playground-code,
+  .guide-code-content
+) {
+  background: var(--background);
+  color: var(--text);
+}
+
+.visual-app .detail-line-numbers {
+  border-color: var(--line);
+  background: var(--panel);
+  color: var(--muted);
+}
+
+.visual-app .detail-file-list button[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--raised);
+  color: var(--accent);
+}
+
+.visual-app .detail-facts span {
+  border-color: var(--line);
+  border-radius: 6px;
+  background: var(--glass);
+  color: var(--muted);
+}
+
+.visual-app .playground-preview {
+  background-color: var(--background);
+}
+
+.visual-app .detail-stage-light {
+  background: #eff4f2;
+  background-image: none;
+}
+
+.visual-app .detail-stage-dark {
+  background: #080b10;
+  background-image: none;
+}
+
+.visual-app .preview-workspace:fullscreen {
+  border-radius: 0;
+  background: var(--background);
+}
+
+.visual-app .preview-workspace:fullscreen .workspace-controls {
+  background: var(--glass-strong);
+}
+
+/* Command menu and supporting states */
+
+.visual-app .command-dialog {
+  border-color: var(--line);
+  border-radius: 20px;
+
+  background: var(--glass-strong);
+  backdrop-filter: blur(24px);
+
+  box-shadow: 0 40px 120px #00000066;
+}
+
+.visual-app .command-dialog::backdrop {
+  background: #02070bb3;
+  backdrop-filter: blur(8px);
+}
+
+.visual-app .command-option[aria-selected="true"] {
+  border-color: var(--line);
+  background: var(--raised);
+}
+
+.visual-app :is(
+  .command-option-symbol,
+  .command-trigger kbd,
+  .command-footer kbd,
+  .empty-state-symbol
+) {
+  border-color: var(--line);
+  background: var(--raised);
+  color: var(--accent);
+}
+
+.visual-app :is(
+  .empty-state,
+  .preview-error,
+  .deferred-preview-placeholder
+) {
+  border-color: var(--line);
+  border-radius: 16px;
+  background: var(--glass);
+}
+
+.visual-app :is(
+  .guide-example-links a,
+  .component-pagination a,
+  .usage-code
+) {
+  border-color: var(--line);
+  border-radius: 12px;
+  background: var(--glass);
+}
+
+.visual-app :is(
+  .about-statistics,
+  .about-page-actions,
+  .guide-next,
+  .guide-related,
+  .detail-related,
+  .gallery-pagination,
+  .saved-card-actions
+) {
+  border-color: var(--line);
+}
+
+.visual-app .atlas-footer {
+  margin-top: 40px;
+  border-color: var(--line);
+  background: var(--glass);
+}
+
+.visual-app :is(
+  .atlas-footer-summary,
+  .atlas-footer-bottom
+) {
+  border-color: var(--line);
+}
+
+/* Scroll-driven entrances */
+
+[data-wa-reveal="true"] {
+  opacity: 0;
+  translate: 0 18px;
+
+  transition:
+    opacity 550ms ease,
+    translate 550ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 180ms,
+    border-color 180ms;
+}
+
+[data-wa-visible="true"] {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@keyframes va-title-in {
+  from {
+    opacity: 0;
+    translate: 0 12px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .visual-app .site-header,
+  .visual-app .command-dialog {
+    background: var(--panel);
+  }
+}
+
+/* Responsive refinements */
+
+@media (min-width: 761px) and (max-width: 1150px) {
+  .visual-app .site-header {
+    width: calc(100% - 32px);
+  }
+
+  .visual-app .collection-sidebar {
+    top: 140px;
+  }
+}
+
+@media (max-width: 900px) {
+  .visual-app .collection-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 760px) {
+  .visual-app .site-header {
+    top: 8px;
+
+    width: calc(100% - 24px);
+    min-height: 68px;
+    margin-top: 8px;
+    padding: 12px 14px;
+
+    border-radius: 14px;
+  }
+
+  .visual-app .hero {
+    gap: 32px;
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  .visual-app .hero h1 {
+    font-size: clamp(40px, 9.5vw, 62px);
+  }
+
+  .visual-app .section {
+    padding-top: 44px;
+    padding-bottom: 52px;
+  }
+
+  .visual-app .intro {
+    font-size: 16px;
+  }
+
+  .visual-app .home-feature-preview {
+    height: 340px;
+  }
+
+  .visual-app :is(.hs-window, .assembly) {
+    transform: none;
+  }
+
+  .va-glow {
+    width: 110vw;
+    height: 110vw;
+  }
+}
+
+/* Accessibility preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .visual-app *,
+  .visual-app *::before,
+  .visual-app *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-wa-reveal] {
+    opacity: 1;
+    translate: none;
+  }
+
+  .visual-app :is(.hs-window, .assembly),
+  .va-glow {
+    transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .va-scene,
+  .va-scroll-progress {
+    display: none;
+  }
+
+  .visual-app .hero h1 {
+    background: none;
+    color: CanvasText;
+  }
+}

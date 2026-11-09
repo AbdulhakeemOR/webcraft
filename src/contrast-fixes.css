@@ -1,0 +1,498 @@
+/* Interface contrast corrections.
+   No selectors target the collection's sample components. */
+
+/* 1. Older homepage rules must not remove the header surface. */
+
+body:has(.home-v2) .site-header.material-header {
+  background: var(--mh-face);
+}
+
+body:has(.home-v2) .material-header .navigation a:hover {
+  color: var(--mh-text);
+}
+
+body:has(.home-v2)
+.material-header .navigation a[aria-current="page"] {
+  color: var(--mh-active-text);
+}
+
+.site-header.material-header {
+  --mh-active: linear-gradient(#3f68a5, #294c80);
+}
+
+[data-theme="dark"] .site-header.material-header {
+  --mh-active-text: #0b203b;
+}
+
+/* 2. Pale homepage surfaces need dark text in BOTH themes. */
+
+.home-v2.home-tactile .home-category-controls
+button[aria-pressed="true"] {
+  background: linear-gradient(#c1cdb1, #d3ddc6);
+  color: #354b2e;
+  border-bottom-color: #8e9c7f;
+}
+
+.home-v2.home-tactile .home-feature-information .eyebrow {
+  color: #4c5c40;
+}
+
+.home-v2.home-tactile .home-feature-information > p,
+.home-v2.home-tactile .step p,
+.home-v2.home-tactile .recent-examples-note {
+  color: #4c5844;
+}
+
+.home-v2.home-tactile .home-learning-panel p,
+.home-v2.home-tactile .home-learning-panel .eyebrow {
+  color: #3f5035;
+}
+
+.home-v2.home-tactile .home-learning-panel .button-primary {
+  background: linear-gradient(#3f6340, #2b492e);
+  color: #fff;
+  border-color: #3f6340;
+}
+
+.home-v2.home-tactile .recent-example-link .eyebrow {
+  color: #4c5c40;
+}
+
+/* 3. Preserve readable syntax on permanently dark code panels.
+      Local tokens override the root Light-theme syntax palette. */
+
+.material-detail .detail-source-panel,
+.material-guide .guide-code-example,
+.material-playground .playground-code {
+  --source-comment: #a2acbd;
+  --source-string: #b9dca4;
+  --source-keyword: #ccb2ff;
+  --source-tag: #91cfe8;
+  --source-number: #efc08e;
+  --source-property: #9dd8d1;
+  --source-color: #efb3cf;
+}
+
+/* 4. Copy-link controls sit on different fixed surfaces. */
+
+.material-detail .copy-page-link > button,
+.material-compare .copy-page-link > button {
+  min-height: 44px;
+  border-color: #86a4cc;
+  background: #263f60;
+  color: #edf4ff;
+}
+
+.material-detail .copy-page-link > button > span,
+.material-compare .copy-page-link > button > span,
+.material-detail .copy-page-link-status,
+.material-compare .copy-page-link-status {
+  color: #c0d7ff;
+}
+
+.material-detail .copy-page-link-fallback,
+.material-compare .copy-page-link-fallback {
+  color: #c0d0e7;
+}
+
+.material-detail .copy-page-link-fallback input,
+.material-compare .copy-page-link-fallback input {
+  border-color: #7895ba;
+  background: #13253e;
+  color: #edf4ff;
+}
+
+.material-guide .copy-page-link > button {
+  min-height: 44px;
+  border-color: #809bbd;
+  background: #e1ebf7;
+  color: #294c79;
+}
+
+.material-guide .copy-page-link > button > span,
+.material-guide .copy-page-link-status,
+.material-guide .copy-page-link-fallback {
+  color: #294c79;
+}
+
+.material-guide .copy-page-link-fallback input {
+  border-color: #809bbd;
+  background: #f3f7fc;
+  color: #294c79;
+}
+
+/* 5. Darker body text on fixed silver panels. */
+
+.material-gallery .component-information > p,
+.material-saved .saved-page-card > p,
+.material-directory .section-directory-card > p,
+.material-directory .template-directory-information p,
+.material-guides .guide-directory-card > p,
+.material-about .about-section > p:not(.eyebrow),
+.material-about .about-body-copy,
+.material-about .about-capabilities p,
+.material-about .about-expectations li,
+.material-guide .guide-article-section > p,
+.material-guide .guide-checklist li,
+.material-compare .compare-page-description > p,
+.material-playground .playground-hint {
+  color: #3b5270;
+}
+
+/* Keep the About authorship panel's light text. */
+
+.material-about .about-authorship > p:not(.eyebrow) {
+  color: #d1e0f4;
+}
+
+/* Smaller metadata needs contrast too. */
+
+.material-gallery .component-information .eyebrow,
+.material-saved .saved-page-card > .eyebrow,
+.material-directory .template-directory-information .eyebrow,
+.material-guides .guide-card-meta,
+.material-guides .guide-card-meta .eyebrow,
+.material-about .about-statistics dt,
+.material-compare .compare-page-description > .eyebrow {
+  color: #405b7c;
+}
+
+/* 6. White labels need a darker blue key face. */
+
+.material-directory .section-directory-card > .button,
+.material-directory .template-directory-information > .button,
+.material-directory > .empty-state > .button,
+.material-saved .saved-backup-actions button:not(:disabled),
+.material-saved .empty-state button,
+.material-saved .saved-page-empty > .button,
+.material-about .about-page-actions > .button,
+.material-compare > button,
+.material-compare .compare-page-toolbar button,
+.material-detail .detail-download-bundle,
+.material-gallery .empty-state button,
+.atlas-not-found .atlas-not-found-primary {
+  background: linear-gradient(#3f68a5, #294c80);
+  color: #fff;
+}
+
+.material-gallery .saved-filter[aria-pressed="true"],
+.material-gallery .gallery-pagination button[aria-current="page"],
+.material-gallery .collection-sidebar-categories
+button[aria-pressed="true"],
+.material-detail .detail-save-button[aria-pressed="true"],
+.material-detail .detail-view-bar button[aria-pressed="true"],
+.material-detail .detail-file-list button[aria-pressed="true"] {
+  background: linear-gradient(#3f68a5, #294c80);
+  color: #fff;
+}
+
+/* 7. Documentation links and supporting detail-page headings. */
+
+.material-detail .documentation-grid .small-text,
+.material-detail .documentation-grid .eyebrow {
+  color: #3b5270;
+}
+
+.material-detail .detail-setup-guide-link {
+  color: #244e84;
+}
+
+.material-detail .detail-related > .section-heading h2 {
+  color: #edf4ff;
+}
+
+.material-detail .detail-related > .section-heading .eyebrow,
+.material-detail .detail-related > .section-heading .text-link {
+  color: #bad2f5;
+}
+
+/* 8. Homepage console labels and its primary action.
+      This is the site hero, not a library sample. */
+
+.tc-hero .tc-key-accent {
+  background: linear-gradient(#994c38, #783a2b);
+  color: #fff;
+}
+
+.tc-hero .tc-materials p,
+.tc-hero .tc-console-bottom,
+.tc-hero .tc-model,
+.tc-hero .tc-power {
+  color: #46503e;
+}
+
+.tc-hero .tc-card-category,
+.tc-hero .tc-card-description {
+  color: #35472f;
+}
+
+/* Homepage palette: silver, graphite, and blue.
+   Library sample interiors are not targeted. */
+
+.home-v2.home-tactile {
+  background: #dce5ef;
+  color: #304c6e;
+}
+
+/* Hero surface */
+
+.home-v2.home-tactile .tc-hero {
+  --tc-ink: #304c6e;
+  --tc-muted: #496582;
+
+  border-color: #edf5ff;
+  background:
+    radial-gradient(ellipse at 90% 10%, #ffffff99, transparent 55%),
+    linear-gradient(135deg, #e9f0f8, #c6d5e7);
+  color: #304c6e;
+}
+
+.home-v2.home-tactile .tc-copy h1 {
+  color: #293f5b;
+}
+
+.home-v2.home-tactile .tc-copy h1 span {
+  color: #496b94;
+}
+
+.home-v2.home-tactile :is(
+  .tc-eyebrow,
+  .tc-intro,
+  .tc-text-link,
+  .tc-materials p
+) {
+  color: #3b5778;
+}
+
+.home-v2.home-tactile .tc-eyebrow > span {
+  background: #547caf;
+}
+
+/* Silver console */
+
+.home-v2.home-tactile .tc-console {
+  border-color: #f5f9ff;
+  background: linear-gradient(
+    135deg,
+    #e8eff7,
+    #c5d3e3 65%,
+    #aebfd3
+  );
+  box-shadow:
+    inset 0 2px 2px #fff,
+    inset 2px 0 3px #ffffffb3,
+    inset -3px -3px 5px #657d9b40,
+    0 2px 0 #a7bad1,
+    0 6px 0 #93a9c3,
+    0 12px 0 #7a92af,
+    0 22px 20px #29456733,
+    0 42px 50px #29456726;
+}
+
+.home-v2.home-tactile :is(
+  .tc-wordmark,
+  .tc-model,
+  .tc-power,
+  .tc-control-label,
+  .tc-console-bottom
+) {
+  color: #3b5472;
+}
+
+.home-v2.home-tactile .tc-power i {
+  background: #507eb8;
+}
+
+/* Recessed blue display chamber */
+
+.home-v2.home-tactile .tc-bay {
+  border-color: #829dbf;
+  background:
+    radial-gradient(ellipse at 40% 25%, #e4effc, transparent 70%),
+    linear-gradient(135deg, #afc6e2, #d2e1f3);
+}
+
+.home-v2.home-tactile .tc-bay-label {
+  color: #365579;
+}
+
+.home-v2.home-tactile .tc-display {
+  border-color: #a5b9d0;
+  background: linear-gradient(135deg, #b9cee8, #dce9f8);
+  color: #2d4d77;
+}
+
+.home-v2.home-tactile .tc-display-label,
+.home-v2.home-tactile .tc-display strong {
+  color: #2d4d77;
+}
+
+/* Physical buttons */
+
+.home-v2.home-tactile .tc-key {
+  --key-edge: #859ebf;
+  border-color: #a1b7d4;
+  background: linear-gradient(145deg, #f5f9ff, #c6d8ed);
+  color: #34577f;
+}
+
+.home-v2.home-tactile .tc-key-accent {
+  --key-edge: #294b7e;
+  border-color: #789bd1;
+  background: linear-gradient(#3f68a5, #294c80);
+  color: #fff;
+}
+
+/* Glass card face: preserve each specimen's artwork colour. */
+
+.home-v2.home-tactile .tc-card {
+  background: #edf4fc;
+}
+
+.home-v2.home-tactile .tc-glass-on .tc-card {
+  background: #edf4fcd9;
+}
+
+.home-v2.home-tactile .tc-card h2 {
+  color: #294766;
+}
+
+.home-v2.home-tactile :is(
+  .tc-card-category,
+  .tc-card-description
+) {
+  color: #365575;
+}
+
+.home-v2.home-tactile .tc-card-save {
+  border-color: #90aaca;
+  background: linear-gradient(#f0f6ff, #c8daf0);
+  color: #31557f;
+}
+
+/* Controls */
+
+.home-v2.home-tactile .tc-switch,
+.home-v2.home-tactile .tc-slider-row output {
+  color: #365575;
+}
+
+.home-v2.home-tactile .tc-switch-track {
+  border-color: #8ca6c6;
+  background: #8fa8c8;
+}
+
+.home-v2.home-tactile .tc-switch-track > span {
+  border-color: #a1b5ce;
+  background: linear-gradient(#f5f9ff, #c6d6eb);
+}
+
+/* Homepage section typography */
+
+.home-v2.home-tactile .section-heading h2,
+.home-v2.home-tactile .recent-examples-heading h2,
+.home-v2.home-tactile .home-learning-panel h2 {
+  color: #304c6e;
+}
+
+.home-v2.home-tactile .section-heading p,
+.home-v2.home-tactile .results-count,
+.home-v2.home-tactile .eyebrow {
+  color: #405e80;
+}
+
+/* Recessed collection statistics */
+
+.home-v2.home-tactile .home-collection-summary {
+  border-color: #93acce;
+  background: linear-gradient(135deg, #bacfe8, #dce8f7);
+}
+
+.home-v2.home-tactile .home-collection-summary strong,
+.home-v2.home-tactile .home-collection-summary span {
+  color: #34577f;
+}
+
+/* Category keys */
+
+.home-v2.home-tactile .home-category-controls button {
+  border-color: #9eb5d2;
+  background: linear-gradient(#f3f8ff, #c8daef);
+  color: #365b87;
+}
+
+.home-v2.home-tactile .home-category-controls
+button[aria-pressed="true"] {
+  border-color: #6d91c5;
+  background: linear-gradient(#3f68a5, #294c80);
+  color: #fff;
+}
+
+.home-v2.home-tactile .home-category-controls button > span {
+  background: #d7e5f6;
+  color: #35567f;
+}
+
+/* Collection frames, without reaching into previews */
+
+.home-v2.home-tactile .home-feature-card,
+.home-v2.home-tactile .recent-example-link,
+.home-v2.home-tactile .step {
+  border-color: #f3f8ff;
+  background: linear-gradient(135deg, #edf4fc, #cbdbee);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 4px 0 #94accb,
+    0 12px 18px #29456720;
+}
+
+.home-v2.home-tactile .home-feature-information h3,
+.home-v2.home-tactile .recent-example-link strong,
+.home-v2.home-tactile .step h3 {
+  color: #2e507b;
+}
+
+.home-v2.home-tactile .home-feature-information .eyebrow,
+.home-v2.home-tactile .home-feature-information > p,
+.home-v2.home-tactile .recent-example-link .eyebrow,
+.home-v2.home-tactile .step p,
+.home-v2.home-tactile .recent-examples-note {
+  color: #3b5270;
+}
+
+.home-v2.home-tactile .home-feature-information h3 a > span,
+.home-v2.home-tactile .step > .eyebrow {
+  border-color: #91abcd;
+  background: linear-gradient(#e7f0fd, #b5cceb);
+  color: #355c8c;
+}
+
+.home-v2.home-tactile .home-learning-panel {
+  border-color: #f2f7ff;
+  background: linear-gradient(135deg, #e8f1fd, #bed2ed);
+  box-shadow:
+    inset 0 2px 1px #fff,
+    0 6px 0 #8fa9cb,
+    0 16px 25px #29456720;
+}
+
+.home-v2.home-tactile .home-learning-panel p,
+.home-v2.home-tactile .home-learning-panel .eyebrow,
+.home-v2.home-tactile .home-learning-panel a,
+.home-v2.home-tactile .text-link {
+  color: #35577f;
+}
+
+.home-v2.home-tactile .home-learning-panel .button-primary {
+  background: linear-gradient(#3f68a5, #294c80);
+  color: #fff;
+}
+
+/* Keep the actual site footer identical on every route. */
+
+body:has(.home-v2) .atlas-footer.material-footer {
+  background:
+    radial-gradient(ellipse at 0% 0%, #5b779b33, transparent 60%),
+    linear-gradient(135deg, #303c4b, #172331);
+  color: #dce8f9;
+}

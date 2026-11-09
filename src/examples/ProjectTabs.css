@@ -1,0 +1,155 @@
+/* -------------------------------------------------------
+   Scoped tabbed panel
+------------------------------------------------------- */
+
+.project-tabs {
+  width: 100%;
+  max-width: 620px;
+  min-width: 0;
+  margin-inline: auto;
+  padding: 24px;
+
+  border: 1px solid #d6cfe1;
+  border-radius: 16px;
+
+  background: #f8f5fc;
+  color: #392d49;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color-scheme: light;
+}
+
+.project-tabs,
+.project-tabs * {
+  box-sizing: border-box;
+}
+
+.pt-eyebrow {
+  color: #6c587e;
+  font-family: monospace;
+  font-size: 9px;
+  line-height: 1.7;
+  letter-spacing: 1.2px;
+}
+
+.project-tabs .pt-heading h3 {
+  margin: 14px 0 24px;
+  color: #392d49;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.6px;
+}
+
+.pt-tab-list {
+  display: flex;
+  gap: 6px;
+  padding: 5px;
+  overflow-x: auto;
+
+  border: 1px solid #d6cfe1;
+  border-radius: 10px;
+  background: #eee8f5;
+}
+
+.project-tabs .pt-tab-list button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 0 auto;
+  gap: 8px;
+
+  min-height: 46px;
+  padding: 10px 12px;
+
+  border: 1px solid transparent;
+  border-radius: 7px;
+
+  background: transparent;
+  color: #665174;
+
+  font: inherit;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.project-tabs .pt-tab-list button[aria-selected="true"] {
+  border-color: #78608f;
+  background: #63467e;
+  color: #ffffff;
+}
+
+.pt-tab-number {
+  font-family: monospace;
+  font-size: 9px;
+}
+
+.project-tabs .pt-tab-list button:focus-visible {
+  outline: 3px solid #8b5cad;
+  outline-offset: -3px;
+}
+
+.pt-panel {
+  margin-top: 20px;
+  padding: 24px;
+
+  border: 1px solid #d6cfe1;
+  border-radius: 12px;
+  background: #fffdfd;
+}
+
+/* Keep inactive panels out of layout and keyboard navigation. */
+
+.pt-panel[hidden] {
+  display: none;
+}
+
+.pt-panel:focus-visible {
+  outline: 3px solid #8b5cad;
+  outline-offset: 4px;
+}
+
+.pt-panel-number {
+  color: #785a91;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.project-tabs .pt-panel h4 {
+  margin: 18px 0 12px;
+  color: #392d49;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+.pt-panel > p {
+  margin: 0;
+  color: #6c587e;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.pt-panel ul {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0 0;
+  padding-left: 18px;
+
+  color: #594568;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.pt-panel li::marker {
+  color: #785a91;
+}
+
+.pt-note {
+  margin: 18px 0 0;
+  color: #6c587e;
+  font-size: 10px;
+  line-height: 1.8;
+}

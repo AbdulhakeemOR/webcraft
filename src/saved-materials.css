@@ -1,0 +1,322 @@
+/* Library interface only */
+
+.material-saved {
+  margin-block: 28px 60px;
+  padding: clamp(24px, 4vw, 52px);
+  border: 1px solid #465369;
+  border-radius: 25px;
+  background:
+    radial-gradient(ellipse at 100% 0%, #526a8833, transparent 60%),
+    linear-gradient(135deg, #29323e, #18202a);
+  color: #e6edf8;
+  box-shadow:
+    inset 0 1px 0 #ffffff26,
+    0 6px 0 #101824,
+    0 22px 32px #00000026;
+  color-scheme: dark;
+}
+
+.material-saved > .eyebrow {
+  color: #abc4ed;
+}
+
+.material-saved > .page-title {
+  color: #f0f5fc;
+  font-size: clamp(37px, 5vw, 64px);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.material-saved > .intro,
+.material-saved .results-count,
+.material-saved .collection-storage-note {
+  color: #b1bfd3;
+}
+
+/* Recessed search and sort controls */
+
+.material-saved .saved-page-tools {
+  gap: 18px;
+}
+
+.material-saved .search-field {
+  min-height: 54px;
+  border: 1px solid #61758e;
+  border-radius: 12px;
+  background: #121e2e;
+  color: #a9bfdc;
+  box-shadow:
+    inset 0 3px 6px #00000066,
+    0 1px 0 #ffffff26;
+}
+
+.material-saved .search-field input {
+  min-width: 0;
+  min-height: 48px;
+  border: 0;
+  background: transparent;
+  color: #eff5ff;
+  box-shadow: none;
+}
+
+.material-saved .search-field input::placeholder {
+  color: #9bafca;
+}
+
+.material-saved .sort-control {
+  color: #bdcce1;
+}
+
+.material-saved .sort-control select {
+  min-height: 46px;
+  padding: 10px 13px;
+  border: 1px solid #687e9c;
+  border-radius: 9px;
+  background: #21334b;
+  color: #e7f0ff;
+  box-shadow: inset 0 2px 4px #00000033;
+}
+
+/* Saved entries are library cards, not sample previews. */
+
+.material-saved .saved-page-grid {
+  gap: 25px;
+}
+
+.material-saved .saved-page-card {
+  min-width: 0;
+  padding: 25px;
+  border: 1px solid #edf4ff;
+  border-radius: 19px;
+  background:
+    linear-gradient(125deg, #ffffff80, transparent 70%),
+    linear-gradient(135deg, #e0e9f2, #bacbdf);
+  color: #3f5676;
+  box-shadow:
+    inset 0 2px 1px #fff,
+    inset -2px -2px 3px #5b779926,
+    0 4px 0 #7d94af,
+    0 14px 18px #00000026;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.material-saved .saved-page-card > .eyebrow {
+  color: #526f96;
+  font-size: 10px;
+}
+
+.material-saved .saved-page-card h2 {
+  color: #2d4667;
+  font-size: 25px;
+  letter-spacing: -0.04em;
+}
+
+.material-saved .saved-page-card h2 a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 44px;
+  color: inherit;
+}
+
+.material-saved .saved-page-card > p {
+  color: #4c6381;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.material-saved .saved-card-actions {
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-top: 17px;
+  border-top: 1px solid #8da6c166;
+}
+
+.material-saved .saved-card-actions .text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #315d95;
+}
+
+/* Small mechanical remove key */
+
+.material-saved .saved-card-actions button {
+  min-height: 44px;
+  padding: 10px 13px;
+  border: 1px solid #9fb3cd;
+  border-radius: 8px;
+  background: linear-gradient(#f5f9ff, #c8d7e9);
+  color: #4b6487;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 3px 0 #8ca3c0;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  transition: transform 130ms ease, box-shadow 130ms ease;
+}
+
+.material-saved .saved-card-actions button:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 1px 2px #435f8626, 0 1px 0 #8ca3c0;
+}
+
+/* Backup module */
+
+.material-saved .saved-backup {
+  margin-top: 38px;
+  padding: clamp(23px, 3vw, 35px);
+  border: 1px solid #7086a3;
+  border-radius: 20px;
+  background:
+    linear-gradient(135deg, #ffffff0d, transparent),
+    #23354d;
+  box-shadow:
+    inset 0 1px 0 #ffffff33,
+    0 4px 0 #122238,
+    0 12px 18px #00000020;
+}
+
+.material-saved .saved-backup .eyebrow {
+  color: #afcaf4;
+}
+
+.material-saved .saved-backup h2 {
+  color: #edf4ff;
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.material-saved .saved-backup p {
+  color: #b9cbe4;
+  line-height: 1.8;
+}
+
+.material-saved .saved-backup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.material-saved .saved-backup-actions button,
+.material-saved .empty-state button,
+.material-saved .saved-page-empty > .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 46px;
+  padding: 12px 18px;
+  border: 1px solid #9cb9f0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #759ee5, #426bb3);
+  color: #fff;
+  box-shadow:
+    inset 0 1px 1px #ffffff80,
+    0 4px 0 #294979,
+    0 8px 8px #00000026;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 130ms ease, box-shadow 130ms ease;
+}
+
+.material-saved .saved-backup-actions button:active:not(:disabled),
+.material-saved .empty-state button:active,
+.material-saved .saved-page-empty > .button:active {
+  transform: translateY(3px);
+  box-shadow: inset 0 1px 2px #23457326, 0 1px 0 #294979;
+}
+
+.material-saved .saved-backup-actions button:disabled {
+  opacity: 0.45;
+  cursor: default;
+  box-shadow: inset 0 1px 2px #00000026;
+}
+
+/* Status messages have their own recessed readout. */
+
+.material-saved .saved-page-notice:not(:empty),
+.material-saved .saved-backup-status:not(:empty) {
+  padding: 12px 15px;
+  border: 1px solid #526c8b;
+  border-radius: 9px;
+  background: #13263d;
+  color: #c2dbff;
+  box-shadow: inset 0 2px 4px #00000033;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Empty collection */
+
+.material-saved .empty-state {
+  padding: clamp(28px, 5vw, 55px);
+  border: 1px solid #536b89;
+  border-radius: 18px;
+  background: #192b41;
+  box-shadow: inset 0 3px 7px #00000026;
+}
+
+.material-saved .empty-state-symbol {
+  color: #a7c8ff;
+}
+
+.material-saved .empty-state h2 {
+  color: #e8f2ff;
+}
+
+.material-saved .empty-state p {
+  color: #b7cae5;
+}
+
+.material-saved :is(a, button, input, select):focus-visible {
+  outline: 3px solid #9bbfff;
+  outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .material-saved .saved-page-card:hover,
+  .material-saved .saved-page-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow:
+      inset 0 2px 1px #fff,
+      0 4px 0 #7d94af,
+      0 21px 25px #00000033;
+  }
+}
+
+@media (max-width: 760px) {
+  .material-saved {
+    padding: 24px 16px;
+    border-radius: 19px;
+  }
+
+  .material-saved .saved-page-tools {
+    flex-wrap: wrap;
+  }
+
+  .material-saved .saved-page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .material-saved .saved-page-card,
+  .material-saved .saved-card-actions button,
+  .material-saved .saved-backup-actions button,
+  .material-saved .empty-state button,
+  .material-saved .saved-page-empty > .button {
+    transition: none;
+  }
+
+  .material-saved .saved-page-card:hover,
+  .material-saved .saved-page-card:focus-within {
+    transform: none;
+  }
+}

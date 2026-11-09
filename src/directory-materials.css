@@ -1,0 +1,284 @@
+/* Webcraft Atlas directory interface */
+
+.material-directory {
+  margin-block: 28px 60px;
+  padding: clamp(24px, 4vw, 52px);
+  border: 1px solid #526177;
+  border-radius: 25px;
+  background:
+    radial-gradient(ellipse at 100% 0%, #637b9e26, transparent 60%),
+    linear-gradient(135deg, #2b3442, #18212e);
+  color: #e6eefb;
+  box-shadow:
+    inset 0 1px 0 #ffffff26,
+    0 6px 0 #101925,
+    0 22px 32px #00000026;
+  color-scheme: dark;
+}
+
+.material-directory > .eyebrow {
+  color: #aec8f2;
+}
+
+.material-directory > .page-title {
+  color: #f0f5fd;
+  font-size: clamp(38px, 5vw, 65px);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.material-directory > .intro {
+  color: #b2c1d8;
+  line-height: 1.8;
+}
+
+.material-directory > .results-count {
+  color: #b8c9e1;
+}
+
+.material-directory > .sections-template-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-block: 10px 24px;
+  color: #bed5ff;
+  line-height: 1.6;
+}
+
+/* Sections: raised library index cards */
+
+.material-directory .section-directory {
+  gap: 26px;
+}
+
+.material-directory .section-directory-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid #f1f6ff;
+  border-radius: 19px;
+  background:
+    linear-gradient(125deg, #ffffff80, transparent 75%),
+    linear-gradient(135deg, #e3ebf5, #bccde2);
+  box-shadow:
+    inset 0 2px 1px #fff,
+    inset -2px -2px 3px #57769b26,
+    0 4px 0 #8299b6,
+    0 14px 20px #00000026;
+  color: #3f5a7f;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.material-directory .section-directory-card > .eyebrow {
+  display: inline-block;
+  padding: 7px 10px;
+  border: 1px solid #a0b6d1;
+  border-radius: 6px;
+  background: #ccdaed;
+  color: #466991;
+  box-shadow: inset 0 2px 3px #3c5b8220, 0 1px 0 #fff;
+  font-size: 10px;
+}
+
+.material-directory .section-directory-card > h2 {
+  margin-top: 20px;
+  color: #2e4b72;
+  font-size: 27px;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.material-directory .section-directory-card > p {
+  flex: 1;
+  color: #526b8c;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Template housing */
+
+.material-directory .template-directory {
+  display: grid;
+  gap: 34px;
+}
+
+.material-directory .template-directory-card {
+  min-width: 0;
+  padding: 9px;
+  overflow: hidden;
+  border: 1px solid #f1f6ff;
+  border-radius: 23px;
+  background: linear-gradient(135deg, #dde7f2, #9db0c8);
+  box-shadow:
+    inset 0 2px 1px #fff,
+    inset -2px -2px 4px #526c8e33,
+    0 5px 0 #7087a5,
+    0 18px 24px #00000030;
+}
+
+/* Frame only: no descendant rules target the sample itself. */
+
+.material-directory .template-directory-preview {
+  border: 1px solid #7d95b5;
+  border-radius: 15px;
+  box-shadow:
+    inset 0 3px 6px #243e6126,
+    0 1px 0 #ffffff99;
+}
+
+.material-directory .template-directory-preview:focus-visible {
+  outline: 3px solid #264f86;
+  outline-offset: -4px;
+}
+
+/* Frosted information plate outside the sample */
+
+.material-directory .template-directory-information {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 9px;
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid #ffffffb3;
+  border-radius: 15px;
+  background: linear-gradient(125deg, #ffffffd9, #edf4fbb3);
+  backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 #fff;
+  color: #3c577c;
+  color-scheme: light;
+}
+
+.material-directory .template-directory-information > div {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.material-directory .template-directory-information .eyebrow {
+  color: #55769f;
+  font-size: 10px;
+}
+
+.material-directory .template-directory-information h2 {
+  color: #2b486e;
+  font-size: clamp(25px, 3vw, 33px);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.material-directory .template-directory-information p {
+  max-width: 680px;
+  color: #526d90;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Tactile library action keys */
+
+.material-directory .section-directory-card > .button,
+.material-directory .template-directory-information > .button,
+.material-directory > .empty-state > .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid #8babdc;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #719ce2, #426db9);
+  color: #fff;
+  box-shadow:
+    inset 0 2px 1px #ffffff66,
+    inset 0 -1px 2px #264c8333,
+    0 4px 0 #294c83,
+    0 8px 7px #203c6526;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: transform 130ms ease, box-shadow 130ms ease;
+}
+
+.material-directory .section-directory-card > .button:active,
+.material-directory .template-directory-information > .button:active,
+.material-directory > .empty-state > .button:active {
+  transform: translateY(3px);
+  box-shadow:
+    inset 0 1px 2px #264c8333,
+    0 1px 0 #294c83;
+}
+
+.material-directory .section-directory-card > .button:focus-visible,
+.material-directory .template-directory-information > .button:focus-visible {
+  outline: 3px solid #254d86;
+  outline-offset: 5px;
+}
+
+.material-directory > .sections-template-link:focus-visible,
+.material-directory > .empty-state > .button:focus-visible {
+  outline: 3px solid #a4c5ff;
+  outline-offset: 5px;
+}
+
+/* Empty directory */
+
+.material-directory > .empty-state {
+  padding: 35px;
+  border: 1px solid #526f94;
+  border-radius: 17px;
+  background: #1c304b;
+  box-shadow: inset 0 3px 6px #00000026;
+}
+
+.material-directory > .empty-state h2 {
+  color: #e0ecff;
+  line-height: 1.3;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .material-directory .section-directory-card:hover,
+  .material-directory .section-directory-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow:
+      inset 0 2px 1px #fff,
+      0 4px 0 #8299b6,
+      0 22px 25px #00000033;
+  }
+}
+
+@media (max-width: 760px) {
+  .material-directory {
+    padding: 25px 16px;
+    border-radius: 19px;
+  }
+
+  .material-directory .section-directory {
+    grid-template-columns: 1fr;
+  }
+
+  .material-directory .section-directory-card {
+    padding: 24px;
+  }
+
+  .material-directory .template-directory-information > .button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .material-directory .section-directory-card,
+  .material-directory .section-directory-card > .button,
+  .material-directory .template-directory-information > .button,
+  .material-directory > .empty-state > .button {
+    transition: none;
+  }
+
+  .material-directory .section-directory-card:hover,
+  .material-directory .section-directory-card:focus-within {
+    transform: none;
+  }
+}

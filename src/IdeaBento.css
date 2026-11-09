@@ -1,0 +1,394 @@
+/* -------------------------------------------------------
+   Scoped bento feature-grid example
+------------------------------------------------------- */
+
+.idea-bento {
+  container-name: idea-bento;
+  container-type: inline-size;
+
+  width: 100%;
+  min-width: 0;
+  padding: 20px;
+
+  border: 1px solid #d8d4ca;
+  border-radius: 16px;
+
+  background: #f2efe7;
+  color: #292d26;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.idea-bento,
+.idea-bento * {
+  box-sizing: border-box;
+}
+
+.ib-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  margin-bottom: 20px;
+}
+
+.ib-eyebrow,
+.ib-card-label {
+  font-family: monospace;
+  font-size: 9px;
+  line-height: 1.6;
+  letter-spacing: 1.2px;
+}
+
+.ib-eyebrow {
+  color: #606856;
+}
+
+.idea-bento .ib-header h3 {
+  margin: 8px 0 0;
+  color: #292d26;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+.idea-bento .ib-layout-toggle,
+.idea-bento .ib-reset {
+  min-height: 44px;
+  border: 1px solid #c6c7b8;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #363e2e;
+
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.idea-bento .ib-layout-toggle {
+  padding: 10px 12px;
+}
+
+.idea-bento .ib-layout-toggle[aria-pressed="true"] {
+  border-color: #3c503a;
+  background: #3c503a;
+  color: #ffffff;
+}
+
+.idea-bento button:focus-visible,
+.idea-bento input:focus-visible {
+  outline: 3px solid #436b3a;
+  outline-offset: 4px;
+}
+
+/* Grid */
+
+.ib-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ib-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+}
+
+.idea-bento .ib-card h4 {
+  margin: 18px 0 12px;
+  color: inherit;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.6px;
+}
+
+.ib-card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.ib-card-label {
+  opacity: 0.85;
+}
+
+/* Introduction */
+
+.ib-introduction {
+  grid-column: span 2;
+
+  background: #344736;
+  color: #f0f3e8;
+}
+
+.ib-introduction p {
+  max-width: 440px;
+  color: #d2ddca;
+}
+
+.ib-orbit {
+  position: relative;
+  width: 96px;
+  height: 80px;
+  margin-top: 28px;
+}
+
+.ib-orbit span {
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  border: 1px solid #bdd0ac;
+  border-radius: 50%;
+}
+
+.ib-orbit span:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.ib-orbit span:nth-child(2) {
+  top: 0;
+  left: 28px;
+}
+
+.ib-orbit span:nth-child(3) {
+  top: 20px;
+  left: 14px;
+}
+
+.ib-pill {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 7px 10px;
+
+  border: 1px solid #74866a;
+  border-radius: 30px;
+
+  color: #e0e9d8;
+  font-size: 10px;
+}
+
+/* Checklist */
+
+.ib-checklist {
+  background: #e4e8d7;
+  color: #303a28;
+}
+
+.ib-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.idea-bento .ib-reset {
+  padding: 6px 10px;
+}
+
+.ib-tasks {
+  display: grid;
+  gap: 4px;
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ib-tasks label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 44px;
+
+  font-size: 12px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.ib-tasks input {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #3c503a;
+}
+
+.ib-tasks input:checked + span {
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.ib-progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 8px;
+  font-size: 10px;
+}
+
+.ib-progress {
+  display: block;
+  width: 100%;
+  height: 8px;
+
+  overflow: hidden;
+  border: 0;
+  border-radius: 10px;
+
+  background: #c9d2ba;
+  accent-color: #3c503a;
+}
+
+.ib-progress::-webkit-progress-bar {
+  border-radius: 10px;
+  background: #c9d2ba;
+}
+
+.ib-progress::-webkit-progress-value {
+  border-radius: 10px;
+  background: #3c503a;
+}
+
+.ib-progress::-moz-progress-bar {
+  border-radius: 10px;
+  background: #3c503a;
+}
+
+.ib-checklist .ib-progress-message {
+  margin-top: 12px;
+  font-size: 10px;
+}
+
+/* Perspective */
+
+.ib-note {
+  background: #e9c9ac;
+  color: #4d3426;
+}
+
+.ib-note-symbol {
+  display: block;
+  margin-top: 20px;
+  font-size: 40px;
+  line-height: 1;
+}
+
+/* Foundation */
+
+.ib-foundation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  grid-column: span 2;
+
+  border-color: #d7d1c3;
+  background: #fffdf6;
+  color: #373b31;
+}
+
+.ib-foundation p {
+  color: #606856;
+}
+
+.ib-rhythm {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+
+  height: 90px;
+}
+
+.ib-rhythm span {
+  width: 12px;
+  border-radius: 4px;
+  background: #85946d;
+}
+
+.ib-rhythm span:nth-child(1),
+.ib-rhythm span:nth-child(5) {
+  height: 30%;
+}
+
+.ib-rhythm span:nth-child(2),
+.ib-rhythm span:nth-child(4) {
+  height: 65%;
+}
+
+.ib-rhythm span:nth-child(3) {
+  height: 100%;
+}
+
+.ib-demo-note {
+  margin: 16px 0 0;
+  color: #606856;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* Optional equal-width layout */
+
+.ib-grid-compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ib-grid-compact .ib-card {
+  grid-column: auto;
+}
+
+.ib-grid-compact .ib-foundation {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Container-based responsiveness */
+
+@container idea-bento (max-width: 680px) {
+  .ib-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ib-introduction,
+  .ib-foundation {
+    grid-column: 1 / -1;
+  }
+
+  .ib-grid-compact .ib-card {
+    grid-column: auto;
+  }
+
+  .ib-card {
+    padding: 20px;
+  }
+}
+
+@container idea-bento (max-width: 420px) {
+  .ib-grid,
+  .ib-grid-compact {
+    grid-template-columns: 1fr;
+  }
+
+  .ib-grid .ib-card {
+    grid-column: auto;
+  }
+
+  .ib-foundation {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .idea-bento .ib-header h3 {
+    font-size: 23px;
+  }
+}
